@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jhanmtl.github.io/eye-detector/",
+  "homepage":"http://jhanmtl.github.io/eye-detector",
 
   "dependencies": {
     "@tensorflow/tfjs": "^2.3.0",
