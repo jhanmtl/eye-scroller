@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage":"http://jhanmtl.github.io/eye-detector",
-
   "dependencies": {
     "@tensorflow/tfjs": "^2.3.0",
     "@tensorflow/tfjs-backend-wasm": "^2.3.0",
