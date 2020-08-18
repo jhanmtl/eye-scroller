@@ -55,7 +55,7 @@ class App extends React.Component {
         this.what =priorSplits[2]
         this.hhat =priorSplits[3]
 
-        tf.loadLayersModel("https://github.com/jhanmtl/eye-detector/tree/gh-pages/trainedModel/model.json").then(loadedModel=>{
+        tf.loadLayersModel("model.json").then(loadedModel=>{
             this.modelHasLoaded=true;
             this.model=loadedModel;
         });
