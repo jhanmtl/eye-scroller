@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+#webCam{
+  /*border: 1px solid black;*/
+}
+
+.inputCanvas,.outputCanvas{
+  border: 1px solid black;
+}
+
+.container{
+  display: grid;
+  margin-bottom: 15px;
+}
+
+.videoUnderlay, .input, .output{
+  grid-area:1/1;
+}
+
+.title{
+  font-size: 11pt;
+}
+.note{
+  font-size: 10pt;
+}
