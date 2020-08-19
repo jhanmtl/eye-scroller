@@ -1,7 +1,7 @@
 import React from 'react';
 import * as tf from "@tensorflow/tfjs"
 import './App.css';
-import {priors} from './data/priors'
+import {priors} from './priors'
 
 class App extends React.Component {
 
