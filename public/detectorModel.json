@@ -6519,9 +6519,9 @@
   "weightsManifest": [
     {
       "paths": [
-        "group1-shard1of3.bin",
-        "group1-shard2of3.bin",
-        "group1-shard3of3.bin"
+        "detector-group1-shard1of3.bin",
+        "detector-group1-shard2of3.bin",
+        "detector-group1-shard3of3.bin"
       ],
       "weights": [
         {
