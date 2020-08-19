@@ -40,10 +40,11 @@ class App extends React.Component {
         this.videoOriginX=undefined;
         this.videoOriginY=undefined;
         this.cropDim=undefined;
-        this.destDim=224
-        this.sf=1
+        this.destDim=224;
+        this.sf=0.75;
 
         this.threshold=0.5;
+        this.nmsSigma=0.1;
     }
 
     componentDidMount() {
@@ -124,25 +125,29 @@ class App extends React.Component {
                 this.recoverBboxes();
 
                 let boxesPromise = this.bboxes.array()
-                let nmsPromise = tf.image.nonMaxSuppressionWithScoreAsync(this.bboxes, this.confidence, 2, undefined, undefined, 0.25);
+                let nmsPromise = tf.image.nonMaxSuppressionWithScoreAsync(this.bboxes,
+                                                                          this.confidence,
+                                                                          2,
+                                                                          undefined,
+                                                                          undefined,
+                                                                           this.nmsSigma);
 
                 Promise.all([boxesPromise, nmsPromise]).then(values => {
-
-                    this.outputCtx.drawImage(this.videoRef.current,
-                        this.videoOriginX,
-                        this.videoOriginY,
-                        this.cropDim,
-                        this.cropDim,
-                        0,
-                        0,
-                        this.destDim,
-                        this.destDim)
-
                     let boxesVal = values[0]
                     let nmsIdxPromise = values[1].selectedIndices.array()
                     let nmsScorePromise = values[1].selectedScores.array()
 
                     Promise.all([nmsIdxPromise, nmsScorePromise]).then(values => {
+                        this.outputCtx.drawImage(this.videoRef.current,
+                                                this.videoOriginX,
+                                                this.videoOriginY,
+                                                this.cropDim,
+                                                this.cropDim,
+                                                0,
+                                                0,
+                                                this.destDim,
+                                                this.destDim)
+
                         let nmsIdx = values[0]
                         let nmsScores = values[1]
 
@@ -153,7 +158,7 @@ class App extends React.Component {
                         let scoreB = nmsScores[1]
 
                         if (scoreA > this.threshold && scoreB > this.threshold) {
-                            this.drawBox(boxA, "rgb(255,0,0)")
+                            this.drawBox(boxA, "rgb(0,255,0)")
                             this.drawBox(boxB, "rgb(0,255,0)")
                             this.leftTextRef.current.innerText="left eye confidence: "+(100*scoreA).toFixed(2)+"%"
                             this.rightTextRef.current.innerText="right eye confidence: "+(100*scoreB).toFixed(2)+"%"
@@ -216,6 +221,9 @@ class App extends React.Component {
                 <button onClick={this.startWebcam}>enable webcam</button>
                 <p className="note" ref={this.leftTextRef}>left eye confidence:</p>
                 <p className="note" ref={this.rightTextRef}>right eye confidence:</p>
+
+                <a href="https://github.com/jhanmtl/eye-detector" target="_blank">github repo</a>
+
             </div>
         );
     }
