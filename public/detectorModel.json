@@ -8,7 +8,7 @@
     "model_config": {
       "class_name": "Model",
       "config": {
-        "name": "functional_7",
+        "name": "functional_91",
         "layers": [
           {
             "class_name": "InputLayer",
@@ -22,15 +22,15 @@
               "dtype": "float32",
               "sparse": false,
               "ragged": false,
-              "name": "input_4"
+              "name": "input_46"
             },
-            "name": "input_4",
+            "name": "input_46",
             "inbound_nodes": []
           },
           {
             "class_name": "Model",
             "config": {
-              "name": "functional_5",
+              "name": "functional_89",
               "layers": [
                 {
                   "class_name": "InputLayer",
@@ -44,16 +44,16 @@
                     "dtype": "float32",
                     "sparse": false,
                     "ragged": false,
-                    "name": "input_3"
+                    "name": "input_45"
                   },
-                  "name": "input_3",
+                  "name": "input_45",
                   "inbound_nodes": []
                 },
                 {
                   "class_name": "ZeroPadding2D",
                   "config": {
                     "name": "Conv1_pad",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "padding": [
                       [
@@ -71,7 +71,7 @@
                   "inbound_nodes": [
                     [
                       [
-                        "input_3",
+                        "input_45",
                         0,
                         0,
                         {}
@@ -83,7 +83,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "Conv1",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 32,
                     "kernel_size": [
@@ -135,7 +135,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "bn_Conv1",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -181,7 +181,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "Conv1_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -203,7 +203,7 @@
                   "class_name": "DepthwiseConv2D",
                   "config": {
                     "name": "expanded_conv_depthwise",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "kernel_size": [
                       3,
@@ -255,7 +255,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "expanded_conv_depthwise_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -301,7 +301,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "expanded_conv_depthwise_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -323,7 +323,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "expanded_conv_project",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 16,
                     "kernel_size": [
@@ -375,7 +375,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "expanded_conv_project_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -421,7 +421,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_1_expand",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 96,
                     "kernel_size": [
@@ -473,7 +473,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_1_expand_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -519,7 +519,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_1_expand_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -541,7 +541,7 @@
                   "class_name": "ZeroPadding2D",
                   "config": {
                     "name": "block_1_pad",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "padding": [
                       [
@@ -571,7 +571,7 @@
                   "class_name": "DepthwiseConv2D",
                   "config": {
                     "name": "block_1_depthwise",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "kernel_size": [
                       3,
@@ -623,7 +623,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_1_depthwise_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -669,7 +669,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_1_depthwise_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -691,7 +691,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_1_project",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 24,
                     "kernel_size": [
@@ -743,7 +743,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_1_project_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -789,7 +789,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_2_expand",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 144,
                     "kernel_size": [
@@ -841,7 +841,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_2_expand_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -887,7 +887,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_2_expand_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -909,7 +909,7 @@
                   "class_name": "DepthwiseConv2D",
                   "config": {
                     "name": "block_2_depthwise",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "kernel_size": [
                       3,
@@ -961,7 +961,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_2_depthwise_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1007,7 +1007,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_2_depthwise_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -1029,7 +1029,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_2_project",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 24,
                     "kernel_size": [
@@ -1081,7 +1081,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_2_project_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1127,7 +1127,7 @@
                   "class_name": "Add",
                   "config": {
                     "name": "block_2_add",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32"
                   },
                   "name": "block_2_add",
@@ -1152,7 +1152,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_3_expand",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 144,
                     "kernel_size": [
@@ -1204,7 +1204,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_3_expand_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1250,7 +1250,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_3_expand_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -1272,7 +1272,7 @@
                   "class_name": "ZeroPadding2D",
                   "config": {
                     "name": "block_3_pad",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "padding": [
                       [
@@ -1302,7 +1302,7 @@
                   "class_name": "DepthwiseConv2D",
                   "config": {
                     "name": "block_3_depthwise",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "kernel_size": [
                       3,
@@ -1354,7 +1354,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_3_depthwise_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1400,7 +1400,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_3_depthwise_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -1422,7 +1422,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_3_project",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 32,
                     "kernel_size": [
@@ -1474,7 +1474,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_3_project_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1520,7 +1520,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_4_expand",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 192,
                     "kernel_size": [
@@ -1572,7 +1572,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_4_expand_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1618,7 +1618,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_4_expand_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -1640,7 +1640,7 @@
                   "class_name": "DepthwiseConv2D",
                   "config": {
                     "name": "block_4_depthwise",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "kernel_size": [
                       3,
@@ -1692,7 +1692,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_4_depthwise_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1738,7 +1738,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_4_depthwise_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -1760,7 +1760,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_4_project",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 32,
                     "kernel_size": [
@@ -1812,7 +1812,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_4_project_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1858,7 +1858,7 @@
                   "class_name": "Add",
                   "config": {
                     "name": "block_4_add",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32"
                   },
                   "name": "block_4_add",
@@ -1883,7 +1883,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_5_expand",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 192,
                     "kernel_size": [
@@ -1935,7 +1935,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_5_expand_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -1981,7 +1981,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_5_expand_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -2003,7 +2003,7 @@
                   "class_name": "DepthwiseConv2D",
                   "config": {
                     "name": "block_5_depthwise",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "kernel_size": [
                       3,
@@ -2055,7 +2055,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_5_depthwise_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -2101,7 +2101,7 @@
                   "class_name": "ReLU",
                   "config": {
                     "name": "block_5_depthwise_relu",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
@@ -2123,7 +2123,7 @@
                   "class_name": "Conv2D",
                   "config": {
                     "name": "block_5_project",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "filters": 32,
                     "kernel_size": [
@@ -2175,7 +2175,7 @@
                   "class_name": "BatchNormalization",
                   "config": {
                     "name": "block_5_project_BN",
-                    "trainable": true,
+                    "trainable": false,
                     "dtype": "float32",
                     "axis": [
                       3
@@ -2972,3370 +2972,184 @@
                       ]
                     ]
                   ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_8_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 384,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_8_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_7_add",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_8_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_8_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_8_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_8_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_8_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_8_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_8_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_8_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_8_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_8_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_8_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 64,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_8_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_8_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_8_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Add",
-                  "config": {
-                    "name": "block_8_add",
-                    "trainable": true,
-                    "dtype": "float32"
-                  },
-                  "name": "block_8_add",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_7_add",
-                        0,
-                        0,
-                        {}
-                      ],
-                      [
-                        "block_8_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_9_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 384,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_9_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_add",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_9_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_9_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_9_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_9_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_9_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_9_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_9_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_9_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_9_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_9_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_9_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 64,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_9_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_9_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_9_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Add",
-                  "config": {
-                    "name": "block_9_add",
-                    "trainable": true,
-                    "dtype": "float32"
-                  },
-                  "name": "block_9_add",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_8_add",
-                        0,
-                        0,
-                        {}
-                      ],
-                      [
-                        "block_9_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_10_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 384,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_10_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_9_add",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_10_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_10_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_10_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_10_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_10_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_10_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_10_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_10_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_10_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_10_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_10_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 96,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_10_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_10_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_10_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_11_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 576,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_11_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_11_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_11_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_11_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_11_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_11_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_11_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_11_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_11_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_11_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_11_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_11_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 96,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_11_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_11_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_11_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Add",
-                  "config": {
-                    "name": "block_11_add",
-                    "trainable": true,
-                    "dtype": "float32"
-                  },
-                  "name": "block_11_add",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_10_project_BN",
-                        0,
-                        0,
-                        {}
-                      ],
-                      [
-                        "block_11_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_12_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 576,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_12_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_add",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_12_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_12_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_12_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_12_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_12_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_12_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_12_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_12_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_12_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_12_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_12_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 96,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_12_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_12_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_12_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Add",
-                  "config": {
-                    "name": "block_12_add",
-                    "trainable": true,
-                    "dtype": "float32"
-                  },
-                  "name": "block_12_add",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_11_add",
-                        0,
-                        0,
-                        {}
-                      ],
-                      [
-                        "block_12_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_13_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 576,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_13_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_12_add",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_13_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_13_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_13_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_13_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ZeroPadding2D",
-                  "config": {
-                    "name": "block_13_pad",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "padding": [
-                      [
-                        0,
-                        1
-                      ],
-                      [
-                        0,
-                        1
-                      ]
-                    ],
-                    "data_format": "channels_last"
-                  },
-                  "name": "block_13_pad",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_13_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      2,
-                      2
-                    ],
-                    "padding": "valid",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_13_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_pad",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_13_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_13_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_13_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_13_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_13_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 160,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_13_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_13_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_13_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_14_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 960,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_14_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_14_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_14_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_14_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_14_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_14_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_14_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_14_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_14_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_14_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_14_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_14_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 160,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_14_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_14_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_14_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Add",
-                  "config": {
-                    "name": "block_14_add",
-                    "trainable": true,
-                    "dtype": "float32"
-                  },
-                  "name": "block_14_add",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_13_project_BN",
-                        0,
-                        0,
-                        {}
-                      ],
-                      [
-                        "block_14_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_15_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 960,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_15_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_add",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_15_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_15_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_15_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_15_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_15_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_15_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_15_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_15_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_15_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_15_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_15_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 160,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_15_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_15_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_15_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Add",
-                  "config": {
-                    "name": "block_15_add",
-                    "trainable": true,
-                    "dtype": "float32"
-                  },
-                  "name": "block_15_add",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_14_add",
-                        0,
-                        0,
-                        {}
-                      ],
-                      [
-                        "block_15_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_16_expand",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 960,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_16_expand",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_15_add",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_16_expand_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_16_expand_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_expand",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_16_expand_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_16_expand_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_expand_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "DepthwiseConv2D",
-                  "config": {
-                    "name": "block_16_depthwise",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "kernel_size": [
-                      3,
-                      3
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "bias_constraint": null,
-                    "depth_multiplier": 1,
-                    "depthwise_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "depthwise_regularizer": null,
-                    "depthwise_constraint": null
-                  },
-                  "name": "block_16_depthwise",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_expand_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_16_depthwise_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_16_depthwise_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_depthwise",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "block_16_depthwise_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "block_16_depthwise_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_depthwise_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "block_16_project",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 320,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "same",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "block_16_project",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_depthwise_relu",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "block_16_project_BN",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "block_16_project_BN",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_project",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "Conv2D",
-                  "config": {
-                    "name": "Conv_1",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "filters": 1280,
-                    "kernel_size": [
-                      1,
-                      1
-                    ],
-                    "strides": [
-                      1,
-                      1
-                    ],
-                    "padding": "valid",
-                    "data_format": "channels_last",
-                    "dilation_rate": [
-                      1,
-                      1
-                    ],
-                    "groups": 1,
-                    "activation": "linear",
-                    "use_bias": false,
-                    "kernel_initializer": {
-                      "class_name": "GlorotUniform",
-                      "config": {
-                        "seed": null
-                      }
-                    },
-                    "bias_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "kernel_regularizer": null,
-                    "bias_regularizer": null,
-                    "activity_regularizer": null,
-                    "kernel_constraint": null,
-                    "bias_constraint": null
-                  },
-                  "name": "Conv_1",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "block_16_project_BN",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "BatchNormalization",
-                  "config": {
-                    "name": "Conv_1_bn",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "axis": [
-                      3
-                    ],
-                    "momentum": 0.999,
-                    "epsilon": 0.001,
-                    "center": true,
-                    "scale": true,
-                    "beta_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "gamma_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "moving_mean_initializer": {
-                      "class_name": "Zeros",
-                      "config": {}
-                    },
-                    "moving_variance_initializer": {
-                      "class_name": "Ones",
-                      "config": {}
-                    },
-                    "beta_regularizer": null,
-                    "gamma_regularizer": null,
-                    "beta_constraint": null,
-                    "gamma_constraint": null
-                  },
-                  "name": "Conv_1_bn",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "Conv_1",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
-                },
-                {
-                  "class_name": "ReLU",
-                  "config": {
-                    "name": "out_relu",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "max_value": 6.0,
-                    "negative_slope": 0.0,
-                    "threshold": 0.0
-                  },
-                  "name": "out_relu",
-                  "inbound_nodes": [
-                    [
-                      [
-                        "Conv_1_bn",
-                        0,
-                        0,
-                        {}
-                      ]
-                    ]
-                  ]
                 }
               ],
               "input_layers": [
                 [
-                  "input_3",
+                  "input_45",
                   0,
                   0
                 ]
               ],
               "output_layers": [
                 [
-                  "out_relu",
+                  "block_7_add",
                   0,
                   0
                 ]
               ]
             },
-            "name": "functional_5",
+            "name": "functional_89",
             "inbound_nodes": [
               [
                 [
-                  "input_4",
+                  "input_46",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "class_name": "Conv2D",
+            "config": {
+              "name": "downsample1",
+              "trainable": true,
+              "dtype": "float32",
+              "filters": 64,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                2,
+                2
+              ],
+              "padding": "valid",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "groups": 1,
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            },
+            "name": "downsample1",
+            "inbound_nodes": [
+              [
+                [
+                  "functional_89",
+                  1,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "class_name": "Conv2D",
+            "config": {
+              "name": "downsample2",
+              "trainable": true,
+              "dtype": "float32",
+              "filters": 64,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "groups": 1,
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            },
+            "name": "downsample2",
+            "inbound_nodes": [
+              [
+                [
+                  "downsample1",
+                  0,
+                  0,
+                  {}
+                ]
+              ]
+            ]
+          },
+          {
+            "class_name": "Conv2D",
+            "config": {
+              "name": "downsample4",
+              "trainable": true,
+              "dtype": "float32",
+              "filters": 128,
+              "kernel_size": [
+                3,
+                3
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "same",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "groups": 1,
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            },
+            "name": "downsample4",
+            "inbound_nodes": [
+              [
+                [
+                  "downsample2",
                   0,
                   0,
                   {}
@@ -6349,7 +3163,7 @@
               "name": "confidence",
               "trainable": true,
               "dtype": "float32",
-              "filters": 3,
+              "filters": 1,
               "kernel_size": [
                 3,
                 3
@@ -6387,8 +3201,8 @@
             "inbound_nodes": [
               [
                 [
-                  "functional_5",
-                  1,
+                  "downsample4",
+                  0,
                   0,
                   {}
                 ]
@@ -6401,7 +3215,7 @@
               "name": "regression",
               "trainable": true,
               "dtype": "float32",
-              "filters": 12,
+              "filters": 4,
               "kernel_size": [
                 3,
                 3
@@ -6439,8 +3253,8 @@
             "inbound_nodes": [
               [
                 [
-                  "functional_5",
-                  1,
+                  "downsample4",
+                  0,
                   0,
                   {}
                 ]
@@ -6454,7 +3268,7 @@
               "trainable": true,
               "dtype": "float32",
               "target_shape": [
-                147,
+                36,
                 1
               ]
             },
@@ -6477,7 +3291,7 @@
               "trainable": true,
               "dtype": "float32",
               "target_shape": [
-                147,
+                36,
                 4
               ]
             },
@@ -6496,7 +3310,7 @@
         ],
         "input_layers": [
           [
-            "input_4",
+            "input_46",
             0,
             0
           ]
@@ -6519,9 +3333,7 @@
   "weightsManifest": [
     {
       "paths": [
-        "detector-group1-shard1of3.bin",
-        "detector-group1-shard2of3.bin",
-        "detector-group1-shard3of3.bin"
+        "detectorWeights.bin"
       ],
       "weights": [
         {
@@ -6529,447 +3341,66 @@
           "shape": [
             3,
             3,
-            1280,
-            3
+            128,
+            1
           ],
           "dtype": "float32"
         },
         {
           "name": "confidence/bias",
           "shape": [
-            3
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "Conv1/kernel",
-          "shape": [
-            3,
-            3,
-            3,
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "bn_Conv1/gamma",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "bn_Conv1/beta",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "expanded_conv_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            32,
             1
           ],
           "dtype": "float32"
         },
         {
-          "name": "expanded_conv_depthwise_BN/gamma",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "expanded_conv_depthwise_BN/beta",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "expanded_conv_project/kernel",
-          "shape": [
-            1,
-            1,
-            32,
-            16
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "expanded_conv_project_BN/gamma",
-          "shape": [
-            16
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "expanded_conv_project_BN/beta",
-          "shape": [
-            16
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_1_expand/kernel",
-          "shape": [
-            1,
-            1,
-            16,
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_1_expand_BN/gamma",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_1_expand_BN/beta",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_1_depthwise/depthwise_kernel",
+          "name": "downsample1/kernel",
           "shape": [
             3,
             3,
-            96,
-            1
+            64,
+            64
           ],
           "dtype": "float32"
         },
         {
-          "name": "block_1_depthwise_BN/gamma",
+          "name": "downsample1/bias",
           "shape": [
-            96
+            64
           ],
           "dtype": "float32"
         },
         {
-          "name": "block_1_depthwise_BN/beta",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_1_project/kernel",
-          "shape": [
-            1,
-            1,
-            96,
-            24
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_1_project_BN/gamma",
-          "shape": [
-            24
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_1_project_BN/beta",
-          "shape": [
-            24
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_2_expand/kernel",
-          "shape": [
-            1,
-            1,
-            24,
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_2_expand_BN/gamma",
-          "shape": [
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_2_expand_BN/beta",
-          "shape": [
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_2_depthwise/depthwise_kernel",
+          "name": "downsample2/kernel",
           "shape": [
             3,
             3,
-            144,
-            1
+            64,
+            64
           ],
           "dtype": "float32"
         },
         {
-          "name": "block_2_depthwise_BN/gamma",
+          "name": "downsample2/bias",
           "shape": [
-            144
+            64
           ],
           "dtype": "float32"
         },
         {
-          "name": "block_2_depthwise_BN/beta",
-          "shape": [
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_2_project/kernel",
-          "shape": [
-            1,
-            1,
-            144,
-            24
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_2_project_BN/gamma",
-          "shape": [
-            24
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_2_project_BN/beta",
-          "shape": [
-            24
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_expand/kernel",
-          "shape": [
-            1,
-            1,
-            24,
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_expand_BN/gamma",
-          "shape": [
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_expand_BN/beta",
-          "shape": [
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_depthwise/depthwise_kernel",
+          "name": "downsample4/kernel",
           "shape": [
             3,
             3,
-            144,
-            1
+            64,
+            128
           ],
           "dtype": "float32"
         },
         {
-          "name": "block_3_depthwise_BN/gamma",
+          "name": "downsample4/bias",
           "shape": [
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_depthwise_BN/beta",
-          "shape": [
-            144
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_project/kernel",
-          "shape": [
-            1,
-            1,
-            144,
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_project_BN/gamma",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_3_project_BN/beta",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_expand/kernel",
-          "shape": [
-            1,
-            1,
-            32,
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_expand_BN/gamma",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_expand_BN/beta",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            192,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_depthwise_BN/gamma",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_depthwise_BN/beta",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_project/kernel",
-          "shape": [
-            1,
-            1,
-            192,
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_project_BN/gamma",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_4_project_BN/beta",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_expand/kernel",
-          "shape": [
-            1,
-            1,
-            32,
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_expand_BN/gamma",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_expand_BN/beta",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            192,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_depthwise_BN/gamma",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_depthwise_BN/beta",
-          "shape": [
-            192
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_project/kernel",
-          "shape": [
-            1,
-            1,
-            192,
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_project_BN/gamma",
-          "shape": [
-            32
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_5_project_BN/beta",
-          "shape": [
-            32
+            128
           ],
           "dtype": "float32"
         },
@@ -7118,674 +3549,26 @@
           "dtype": "float32"
         },
         {
-          "name": "block_8_expand/kernel",
-          "shape": [
-            1,
-            1,
-            64,
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_expand_BN/gamma",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_expand_BN/beta",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_depthwise/depthwise_kernel",
+          "name": "Conv1/kernel",
           "shape": [
             3,
             3,
-            384,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_depthwise_BN/gamma",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_depthwise_BN/beta",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_project/kernel",
-          "shape": [
-            1,
-            1,
-            384,
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_project_BN/gamma",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_project_BN/beta",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_expand/kernel",
-          "shape": [
-            1,
-            1,
-            64,
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_expand_BN/gamma",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_expand_BN/beta",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_depthwise/depthwise_kernel",
-          "shape": [
             3,
-            3,
-            384,
-            1
+            32
           ],
           "dtype": "float32"
         },
         {
-          "name": "block_9_depthwise_BN/gamma",
+          "name": "bn_Conv1/gamma",
           "shape": [
-            384
+            32
           ],
           "dtype": "float32"
         },
         {
-          "name": "block_9_depthwise_BN/beta",
+          "name": "bn_Conv1/beta",
           "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_project/kernel",
-          "shape": [
-            1,
-            1,
-            384,
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_project_BN/gamma",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_project_BN/beta",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_expand/kernel",
-          "shape": [
-            1,
-            1,
-            64,
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_expand_BN/gamma",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_expand_BN/beta",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            384,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_depthwise_BN/gamma",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_depthwise_BN/beta",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_project/kernel",
-          "shape": [
-            1,
-            1,
-            384,
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_project_BN/gamma",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_project_BN/beta",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_expand/kernel",
-          "shape": [
-            1,
-            1,
-            96,
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_expand_BN/gamma",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_expand_BN/beta",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            576,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_depthwise_BN/gamma",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_depthwise_BN/beta",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_project/kernel",
-          "shape": [
-            1,
-            1,
-            576,
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_project_BN/gamma",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_project_BN/beta",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_expand/kernel",
-          "shape": [
-            1,
-            1,
-            96,
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_expand_BN/gamma",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_expand_BN/beta",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            576,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_depthwise_BN/gamma",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_depthwise_BN/beta",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_project/kernel",
-          "shape": [
-            1,
-            1,
-            576,
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_project_BN/gamma",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_project_BN/beta",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_expand/kernel",
-          "shape": [
-            1,
-            1,
-            96,
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_expand_BN/gamma",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_expand_BN/beta",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            576,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_depthwise_BN/gamma",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_depthwise_BN/beta",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_project/kernel",
-          "shape": [
-            1,
-            1,
-            576,
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_project_BN/gamma",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_project_BN/beta",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_expand/kernel",
-          "shape": [
-            1,
-            1,
-            160,
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_expand_BN/gamma",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_expand_BN/beta",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            960,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_depthwise_BN/gamma",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_depthwise_BN/beta",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_project/kernel",
-          "shape": [
-            1,
-            1,
-            960,
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_project_BN/gamma",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_project_BN/beta",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_expand/kernel",
-          "shape": [
-            1,
-            1,
-            160,
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_expand_BN/gamma",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_expand_BN/beta",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            960,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_depthwise_BN/gamma",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_depthwise_BN/beta",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_project/kernel",
-          "shape": [
-            1,
-            1,
-            960,
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_project_BN/gamma",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_project_BN/beta",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_expand/kernel",
-          "shape": [
-            1,
-            1,
-            160,
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_expand_BN/gamma",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_expand_BN/beta",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_depthwise/depthwise_kernel",
-          "shape": [
-            3,
-            3,
-            960,
-            1
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_depthwise_BN/gamma",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_depthwise_BN/beta",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_project/kernel",
-          "shape": [
-            1,
-            1,
-            960,
-            320
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_project_BN/gamma",
-          "shape": [
-            320
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_project_BN/beta",
-          "shape": [
-            320
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "Conv_1/kernel",
-          "shape": [
-            1,
-            1,
-            320,
-            1280
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "Conv_1_bn/gamma",
-          "shape": [
-            1280
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "Conv_1_bn/beta",
-          "shape": [
-            1280
+            32
           ],
           "dtype": "float32"
         },
@@ -7798,6 +3581,30 @@
         },
         {
           "name": "bn_Conv1/moving_variance",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "expanded_conv_depthwise/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            32,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "expanded_conv_depthwise_BN/gamma",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "expanded_conv_depthwise_BN/beta",
           "shape": [
             32
           ],
@@ -7818,6 +3625,30 @@
           "dtype": "float32"
         },
         {
+          "name": "expanded_conv_project/kernel",
+          "shape": [
+            1,
+            1,
+            32,
+            16
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "expanded_conv_project_BN/gamma",
+          "shape": [
+            16
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "expanded_conv_project_BN/beta",
+          "shape": [
+            16
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "expanded_conv_project_BN/moving_mean",
           "shape": [
             16
@@ -7832,6 +3663,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_1_expand/kernel",
+          "shape": [
+            1,
+            1,
+            16,
+            96
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_1_expand_BN/gamma",
+          "shape": [
+            96
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_1_expand_BN/beta",
+          "shape": [
+            96
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_1_expand_BN/moving_mean",
           "shape": [
             96
@@ -7840,6 +3695,30 @@
         },
         {
           "name": "block_1_expand_BN/moving_variance",
+          "shape": [
+            96
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_1_depthwise/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            96,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_1_depthwise_BN/gamma",
+          "shape": [
+            96
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_1_depthwise_BN/beta",
           "shape": [
             96
           ],
@@ -7860,6 +3739,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_1_project/kernel",
+          "shape": [
+            1,
+            1,
+            96,
+            24
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_1_project_BN/gamma",
+          "shape": [
+            24
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_1_project_BN/beta",
+          "shape": [
+            24
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_1_project_BN/moving_mean",
           "shape": [
             24
@@ -7874,6 +3777,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_2_expand/kernel",
+          "shape": [
+            1,
+            1,
+            24,
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_2_expand_BN/gamma",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_2_expand_BN/beta",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_2_expand_BN/moving_mean",
           "shape": [
             144
@@ -7882,6 +3809,30 @@
         },
         {
           "name": "block_2_expand_BN/moving_variance",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_2_depthwise/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            144,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_2_depthwise_BN/gamma",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_2_depthwise_BN/beta",
           "shape": [
             144
           ],
@@ -7902,6 +3853,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_2_project/kernel",
+          "shape": [
+            1,
+            1,
+            144,
+            24
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_2_project_BN/gamma",
+          "shape": [
+            24
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_2_project_BN/beta",
+          "shape": [
+            24
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_2_project_BN/moving_mean",
           "shape": [
             24
@@ -7916,6 +3891,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_3_expand/kernel",
+          "shape": [
+            1,
+            1,
+            24,
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_3_expand_BN/gamma",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_3_expand_BN/beta",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_3_expand_BN/moving_mean",
           "shape": [
             144
@@ -7924,6 +3923,30 @@
         },
         {
           "name": "block_3_expand_BN/moving_variance",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_3_depthwise/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            144,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_3_depthwise_BN/gamma",
+          "shape": [
+            144
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_3_depthwise_BN/beta",
           "shape": [
             144
           ],
@@ -7944,6 +3967,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_3_project/kernel",
+          "shape": [
+            1,
+            1,
+            144,
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_3_project_BN/gamma",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_3_project_BN/beta",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_3_project_BN/moving_mean",
           "shape": [
             32
@@ -7958,6 +4005,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_4_expand/kernel",
+          "shape": [
+            1,
+            1,
+            32,
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_4_expand_BN/gamma",
+          "shape": [
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_4_expand_BN/beta",
+          "shape": [
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_4_expand_BN/moving_mean",
           "shape": [
             192
@@ -7966,6 +4037,30 @@
         },
         {
           "name": "block_4_expand_BN/moving_variance",
+          "shape": [
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_4_depthwise/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            192,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_4_depthwise_BN/gamma",
+          "shape": [
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_4_depthwise_BN/beta",
           "shape": [
             192
           ],
@@ -7986,6 +4081,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_4_project/kernel",
+          "shape": [
+            1,
+            1,
+            192,
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_4_project_BN/gamma",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_4_project_BN/beta",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_4_project_BN/moving_mean",
           "shape": [
             32
@@ -7996,6 +4115,30 @@
           "name": "block_4_project_BN/moving_variance",
           "shape": [
             32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_expand/kernel",
+          "shape": [
+            1,
+            1,
+            32,
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_expand_BN/gamma",
+          "shape": [
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_expand_BN/beta",
+          "shape": [
+            192
           ],
           "dtype": "float32"
         },
@@ -8014,6 +4157,30 @@
           "dtype": "float32"
         },
         {
+          "name": "block_5_depthwise/depthwise_kernel",
+          "shape": [
+            3,
+            3,
+            192,
+            1
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_depthwise_BN/gamma",
+          "shape": [
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_depthwise_BN/beta",
+          "shape": [
+            192
+          ],
+          "dtype": "float32"
+        },
+        {
           "name": "block_5_depthwise_BN/moving_mean",
           "shape": [
             192
@@ -8024,6 +4191,30 @@
           "name": "block_5_depthwise_BN/moving_variance",
           "shape": [
             192
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_project/kernel",
+          "shape": [
+            1,
+            1,
+            192,
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_project_BN/gamma",
+          "shape": [
+            32
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "block_5_project_BN/beta",
+          "shape": [
+            32
           ],
           "dtype": "float32"
         },
@@ -8126,411 +4317,19 @@
           "dtype": "float32"
         },
         {
-          "name": "block_8_expand_BN/moving_mean",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_expand_BN/moving_variance",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_depthwise_BN/moving_mean",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_depthwise_BN/moving_variance",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_project_BN/moving_mean",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_8_project_BN/moving_variance",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_expand_BN/moving_mean",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_expand_BN/moving_variance",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_depthwise_BN/moving_mean",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_depthwise_BN/moving_variance",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_project_BN/moving_mean",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_9_project_BN/moving_variance",
-          "shape": [
-            64
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_expand_BN/moving_mean",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_expand_BN/moving_variance",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_depthwise_BN/moving_mean",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_depthwise_BN/moving_variance",
-          "shape": [
-            384
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_project_BN/moving_mean",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_10_project_BN/moving_variance",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_expand_BN/moving_mean",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_expand_BN/moving_variance",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_depthwise_BN/moving_mean",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_depthwise_BN/moving_variance",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_project_BN/moving_mean",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_11_project_BN/moving_variance",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_expand_BN/moving_mean",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_expand_BN/moving_variance",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_depthwise_BN/moving_mean",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_depthwise_BN/moving_variance",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_project_BN/moving_mean",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_12_project_BN/moving_variance",
-          "shape": [
-            96
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_expand_BN/moving_mean",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_expand_BN/moving_variance",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_depthwise_BN/moving_mean",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_depthwise_BN/moving_variance",
-          "shape": [
-            576
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_project_BN/moving_mean",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_13_project_BN/moving_variance",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_expand_BN/moving_mean",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_expand_BN/moving_variance",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_depthwise_BN/moving_mean",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_depthwise_BN/moving_variance",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_project_BN/moving_mean",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_14_project_BN/moving_variance",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_expand_BN/moving_mean",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_expand_BN/moving_variance",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_depthwise_BN/moving_mean",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_depthwise_BN/moving_variance",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_project_BN/moving_mean",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_15_project_BN/moving_variance",
-          "shape": [
-            160
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_expand_BN/moving_mean",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_expand_BN/moving_variance",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_depthwise_BN/moving_mean",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_depthwise_BN/moving_variance",
-          "shape": [
-            960
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_project_BN/moving_mean",
-          "shape": [
-            320
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "block_16_project_BN/moving_variance",
-          "shape": [
-            320
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "Conv_1_bn/moving_mean",
-          "shape": [
-            1280
-          ],
-          "dtype": "float32"
-        },
-        {
-          "name": "Conv_1_bn/moving_variance",
-          "shape": [
-            1280
-          ],
-          "dtype": "float32"
-        },
-        {
           "name": "regression/kernel",
           "shape": [
             3,
             3,
-            1280,
-            12
+            128,
+            4
           ],
           "dtype": "float32"
         },
         {
           "name": "regression/bias",
           "shape": [
-            12
+            4
           ],
           "dtype": "float32"
         }

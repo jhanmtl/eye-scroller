@@ -50,19 +50,13 @@ class App extends React.Component {
     componentDidMount() {
         this.priorsTensor=tf.tensor2d(priors);
         const priorSplits=tf.split(this.priorsTensor,4,1);
- 
 
         this.cxhat=priorSplits[0]
         this.cyhat=priorSplits[1]
         this.what =priorSplits[2]
         this.hhat =priorSplits[3]
 
-        // tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/detectorModel.json").then(loadedModel=>{
-        //     this.modelHasLoaded=true;
-        //     this.model=loadedModel;
-        // });
-
-        tf.loadLayersModel("model.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/detectorModel.json").then(loadedModel=>{
             this.modelHasLoaded=true;
             this.model=loadedModel;
         });
@@ -85,10 +79,10 @@ class App extends React.Component {
 
     parsePredictions=(predictions)=>{
         let confidence=predictions[0]
-        this.confidence=confidence.reshape([147])
+        this.confidence=confidence.reshape([36])
 
         let offsets=predictions[1]
-        offsets=offsets.reshape([147,4])
+        offsets=offsets.reshape([36,4])
 
         const splits=tf.split(offsets,4,1)
         this.gcx=splits[0]
