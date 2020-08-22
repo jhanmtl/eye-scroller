@@ -1,7 +1,10 @@
 This project is a demonstration in using React with TensorFlowJS to perfrom realtime eye-detection via webcam and
 client-side inference.
 
-[Try live demo here](https://jhanmtl.github.io/eye-detector/) (GPU-capable hardware recommended for optimal experience)
+[Try live demo here](https://jhanmtl.github.io/eye-detector/) 
+
+* 60+ fps on GPU
+* ~10 fps on CPU
 
 ![](./public/demo.gif)
 
