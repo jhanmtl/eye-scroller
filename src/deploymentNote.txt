@@ -1,5 +1,5 @@
 caveats:
 
-1. add "mainFields: ['main']" to node_modules/react-scrip/webpack.config.js to make React compatible with current tfjs. see https://github.com/tensorflow/tfjs/issues/3384#issuecomment-643317776
+1. add "mainFields: ['main']" to node_modules/react-script/config/webpack.config.js to make React compatible with current tfjs. see https://github.com/tensorflow/tfjs/issues/3384#issuecomment-643317776
 2. kinda of a roundabout solution of hosting the actual model.json: push first to the repo in the maaster branch and then use the 'raw' link in the tf.loadLayersModel call in App.js
 
