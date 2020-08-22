@@ -50,6 +50,7 @@ class App extends React.Component {
     componentDidMount() {
         this.priorsTensor=tf.tensor2d(priors);
         const priorSplits=tf.split(this.priorsTensor,4,1);
+ 
 
         this.cxhat=priorSplits[0]
         this.cyhat=priorSplits[1]
@@ -119,7 +120,10 @@ class App extends React.Component {
 
         tf.tidy(()=>{
                 this.cropToCanvas();
-                const imgTensor = tf.expandDims(tf.browser.fromPixels(this.inputCanvasRef.current))
+                let imgTensor = tf.expandDims(tf.browser.fromPixels(this.inputCanvasRef.current));
+                imgTensor = tf.cast(imgTensor,'float32');
+                imgTensor = tf.div(imgTensor,127.5);
+                imgTensor = tf.sub(imgTensor,1);
                 const predictions = this.model.predict(imgTensor);
                 this.parsePredictions(predictions);
                 this.recoverBboxes();
