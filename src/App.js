@@ -44,7 +44,7 @@ class App extends React.Component {
         this.destDim=224;
         this.sf=0.75;
 
-        this.threshold=0.75;
+        this.threshold=0.6;
         this.nmsSigma=0.07;
     }
 
@@ -57,7 +57,7 @@ class App extends React.Component {
         this.what =priorSplits[2]
         this.hhat =priorSplits[3]
 
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/liteModel2.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/liteModel3.json").then(loadedModel=>{
             this.modelHasLoaded=true;
             this.model=loadedModel;
         });

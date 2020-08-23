@@ -3,8 +3,8 @@ client-side inference.
 
 [Try live demo here](https://jhanmtl.github.io/eye-detector/) 
 
-* 60+ fps on GPU
-* ~10 fps on CPU
+* 60+  fps on GPU
+* 5-10 fps on CPU
 
 ![](./public/demo.gif)
 
