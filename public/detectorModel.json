@@ -3477,7 +3477,7 @@
   "weightsManifest": [
     {
       "paths": [
-        "liteWeights4.bin"
+        "detectorWeights.bin"
       ],
       "weights": [
         {
