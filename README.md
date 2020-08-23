@@ -10,7 +10,7 @@ client-side inference.
 
 Customized SSD model originally implemented in TensorFlow Python. Specialized for eye detection. 
 
-Minimal model weights (1mb) with only one prior per feature location. Based on the 14x14 feature
+Minimal model weights (2mb) with only one prior per feature location. Based on the 14x14 feature
 output map of MobileNetV2, downsampled with additional conv2D layers until final feature map of size 7x7.
 
 Utilizes Functional Architecture from TensorFlow Python and custom training routines based on tf.GradientTape. Training data obtained from the 
