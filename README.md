@@ -16,7 +16,7 @@ Utilizes Functional Architecture from TensorFlow Python and custom training rout
 Landmark guided face Parsing ([LaPa](https://github.com/JDAI-CV/lapa-dataset)) dataset by JDAI-CV and preprocessed with on-line augmentation via tf.data API.
 
 Minimal model weights (2mb) with only one prior per feature location. Based on the 14x14 feature
-output map of MobileNetV2, downsampled with additional conv2D layers until final feature map of size 7x7. 
+output map of MobileNetV2, downsampled with additional conv2D layers until final feature map of size 6x6. 
 See model schematic below.
 
 
