@@ -63,13 +63,13 @@ class App extends React.Component {
         this.what =priorSplits[2]
         this.hhat =priorSplits[3]
 
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/detectorModel.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/detectorModel.json").then(loadedModel=>{
             this.detectorModel=loadedModel;
         });
 
-        // tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/detectorModel.json").then(loadedModel=>{
-        //     this.detectorModel=loadedModel;
-        // });
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/landmarksModel.json").then(loadedModel=>{
+            this.landmarksModel=loadedModel;
+        });
 
         this.inputCtx=this.inputCanvasRef.current.getContext('2d');
         this.outputCtx=this.outputCanvasRef.current.getContext('2d');
@@ -192,8 +192,8 @@ class App extends React.Component {
                                 this.destDim);
     }
 
-    prepInput(){
-        let imgTensor = tf.expandDims(tf.browser.fromPixels(this.inputCanvasRef.current), 0);
+    prepInput(canvas){
+        let imgTensor = tf.expandDims(tf.browser.fromPixels(canvas), 0);
         imgTensor = tf.cast(imgTensor, 'float32');
         imgTensor = tf.div(imgTensor, 127.5);
         imgTensor = tf.sub(imgTensor, 1);
@@ -262,6 +262,27 @@ class App extends React.Component {
                     this.destDim,
                     this.destDim);
     }
+
+    predictLandmarks(inputCanvas){
+        const landmarksModelInput=this.prepInput(inputCanvas);
+        let landmarkPredictions=this.landmarksModel.predict(landmarksModelInput);
+        landmarkPredictions=landmarkPredictions.reshape([4,2]);
+        landmarkPredictions=tf.cast(landmarkPredictions,'int32');
+        return landmarkPredictions
+    }
+
+    drawLandmarks(landmarks,ctx,style){
+        for (let i=0;i<landmarks.length;i++){
+            ctx.beginPath();
+            const landmark=landmarks[i];
+            const x=landmark[0]
+            const y=landmark[1]
+            ctx.arc(x,y,2,0,2*Math.PI)
+            ctx.fillStyle=style
+            ctx.fill();
+        }
+    }
+
     synchroPredict=()=> {
         const t0 = performance.now()
 
@@ -269,14 +290,25 @@ class App extends React.Component {
                 this.cropToCanvas();
                 this.updateOutputCanvas();
 
-                const modelInput=this.prepInput();
-                const predictions = this.detectorModel.predict(modelInput);
-                const [scoreA,scoreB,boxA,boxB]=this.getBoxesAndScores(predictions);
+                const detectorModelInput=this.prepInput(this.inputCanvasRef.current);
+                const predictions = this.detectorModel.predict(detectorModelInput);
+                const [scoreLeft,scoreRight,boxLeft,boxRight]=this.getBoxesAndScores(predictions);
 
-                if (scoreA > this.threshold && scoreB > this.threshold) {
-                    this.visualize(scoreA,scoreB,boxA,boxB);
-                    this.boxCrop(boxA,this.leftCtx);
-                    this.boxCrop(boxB,this.rightCtx);
+                if (scoreLeft > this.threshold && scoreRight > this.threshold) {
+
+                    this.visualize(scoreLeft,scoreRight,boxLeft,boxRight);
+
+                    this.boxCrop(boxLeft,this.leftCtx);
+                    this.boxCrop(boxRight,this.rightCtx);
+
+                    let leftLandmarks=this.predictLandmarks(this.leftCanvasRef.current);
+                    let rightLandmarks=this.predictLandmarks(this.leftCanvasRef.current);
+                    leftLandmarks=leftLandmarks.arraySync();
+                    rightLandmarks=rightLandmarks.arraySync();
+
+                    this.drawLandmarks(leftLandmarks,this.leftCtx,'rgb(0,255,255)');
+                    this.drawLandmarks(rightLandmarks,this.rightCtx,'rgb(0,255,255)');
+
                 }
             })
 
