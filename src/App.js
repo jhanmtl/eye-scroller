@@ -8,14 +8,14 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
-        this.modelHasLoaded=false
-        this.priorsTensor=undefined
-        this.model=undefined
+        this.priorsTensor=undefined;
+        this.detectorModel=undefined;
+        this.landmarksModel=undefined;
 
-        this.cxhat=undefined
-        this.cyhat=undefined
-        this.what =undefined
-        this.hhat =undefined
+        this.cxhat=undefined;
+        this.cyhat=undefined;
+        this.what =undefined;
+        this.hhat =undefined;
 
         this.confidence=undefined;
 
@@ -26,15 +26,21 @@ class App extends React.Component {
 
         this.bboxes=undefined;
 
-        this.videoRef=React.createRef()
-        this.inputCanvasRef=React.createRef()
-        this.outputCanvasRef=React.createRef()
-        this.leftTextRef=React.createRef()
-        this.rightTextRef=React.createRef()
-        this.fpsTextRef=React.createRef()
+        this.videoRef=React.createRef();
+
+        this.inputCanvasRef=React.createRef();
+        this.outputCanvasRef=React.createRef();
+        this.leftCanvasRef=React.createRef();
+        this.rightCanvasRef=React.createRef();
 
         this.inputCtx=undefined;
         this.outputCtx=undefined;
+        this.leftCtx=undefined;
+        this.rightCtx=undefined;
+
+        this.leftTextRef=React.createRef();
+        this.rightTextRef=React.createRef();
+        this.fpsTextRef=React.createRef();
 
         this.videoHeight=undefined;
         this.videoWidth=undefined;
@@ -58,16 +64,47 @@ class App extends React.Component {
         this.hhat =priorSplits[3]
 
         tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/detectorModel.json").then(loadedModel=>{
-            this.modelHasLoaded=true;
-            this.model=loadedModel;
+            this.detectorModel=loadedModel;
         });
+
+        // tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-detector/master/public/detectorModel.json").then(loadedModel=>{
+        //     this.detectorModel=loadedModel;
+        // });
 
         this.inputCtx=this.inputCanvasRef.current.getContext('2d');
         this.outputCtx=this.outputCanvasRef.current.getContext('2d');
+        this.leftCtx=this.leftCanvasRef.current.getContext('2d');
+        this.rightCtx=this.rightCanvasRef.current.getContext('2d');
 
-        // tf.setBackend("cpu")
         console.log(tf.getBackend())
-        console.log('synch')
+    }
+
+    setCropProps=(stream)=>{
+        this.videoHeight=stream.getVideoTracks()[0].getSettings().height;
+        this.videoWidth =stream.getVideoTracks()[0].getSettings().width;
+
+        const cen_x=this.videoWidth/2
+        const cen_y=this.videoHeight/2
+
+        this.cropDim=this.destDim/this.sf
+        this.videoOriginX=cen_x-this.cropDim/2
+        this.videoOriginY=cen_y-this.cropDim/2
+    }
+
+    startWebcam=()=>{
+        if (navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({
+                video:true,
+                audio:false,
+            }).then(stream=>{
+                this.videoRef.current.srcObject=stream;
+                this.videoRef.current.style.display='none'
+                this.inputCanvasRef.current.style.display='none'
+                this.setCropProps(stream)
+
+                this.synchroPredict();
+            })
+        }
     }
 
     cropToCanvas=()=>{
@@ -120,165 +157,134 @@ class App extends React.Component {
         this.outputCtx.lineWidth=2
         this.outputCtx.strokeRect(x,y,w,h)
     }
-    asynchPredict=()=>{
-        this.framesRead=this.framesRead+1
-        var t0=performance.now()
-        tf.tidy(()=>{
-                this.detected=false;
-                this.cropToCanvas();
-                let imgTensor = tf.expandDims(tf.browser.fromPixels(this.inputCanvasRef.current),0);
 
-                imgTensor=tf.cast(imgTensor,'float32');
-                imgTensor = tf.div(imgTensor,127.5);
-                imgTensor = tf.sub(imgTensor,1);
-                const predictions = this.model.predict(imgTensor);
+    drawCenter(box,style){
+        const cenY=(box[0]+box[2])/2;
+        const cenX=(box[1]+box[3])/2;
 
-                this.parsePredictions(predictions);
-                this.recoverBboxes();
+        this.outputCtx.beginPath();
+        this.outputCtx.arc(cenX,cenY,5,0,2*Math.PI,false);
 
-                let boxesPromise = this.bboxes.array()
-                let nmsPromise = tf.image.nonMaxSuppressionWithScoreAsync(this.bboxes,
-                                                                          this.confidence,
-                                                                          2,
-                                                                          undefined,
-                                                                          undefined,
-                                                                           this.nmsSigma);
-
-                Promise.all([boxesPromise, nmsPromise]).then(values => {
-                   this.outputCtx.drawImage(this.inputCanvasRef.current,
-                                0,
-                                0,
-                                this.destDim,
-                                this.destDim,
-                                0,
-                                0,
-                                this.destDim,
-                                this.destDim)
-                    let boxesVal = values[0]
-                    let nmsIdxPromise = values[1].selectedIndices.array()
-                    let nmsScorePromise = values[1].selectedScores.array()
-
-                    Promise.all([nmsIdxPromise, nmsScorePromise]).then(values => {
-                        this.framesProcessed=this.framesProcessed+1
-
-                        let nmsIdx = values[0]
-                        let nmsScores = values[1]
-
-                        let boxA = boxesVal[nmsIdx[0]]
-                        let scoreA = nmsScores[0]
-
-                        let boxB = boxesVal[nmsIdx[1]]
-                        let scoreB = nmsScores[1]
-
-                        if (scoreA > this.threshold && scoreB > this.threshold) {
-
-
-                            this.drawBox(boxA, "rgb(0,255,0)")
-                            this.drawBox(boxB, "rgb(0,255,0)")
-                            this.leftTextRef.current.innerText="left eye confidence: "+(100*scoreA).toFixed(2)+"%"
-                            this.rightTextRef.current.innerText="right eye confidence: "+(100*scoreB).toFixed(2)+"%"
-                        }
-                    })
-                })
-
-            })
-
-        var t1=performance.now()
-        var elapsed=(t1-t0)/1000.0
-        var fps=Math.round(1.0/elapsed)
-        this.fpsTextRef.current.innerText="fps: "+fps
-        this.readTextRef.current.innerText="frames displayed: "+this.framesRead
-        this.processedTextRef.current.innerText="frames processed: "+this.framesProcessed
-        window.requestAnimationFrame(this.predict)
+        this.outputCtx.lineWidth=2;
+        this.outputCtx.strokeStyle=style;
+        this.outputCtx.stroke();
     }
 
-    synchroPredict=()=> {
-        this.framesRead = this.framesRead + 1
-        const t0 = performance.now()
-        tf.tidy(() => {
-                this.cropToCanvas();
+    visualize(scoreA,scoreB,boxA,boxB){
+        this.drawBox(boxA, "rgb(0,255,0)")
+        this.drawBox(boxB, "rgb(0,255,0)")
+        this.leftTextRef.current.innerText="left eye confidence: "+(100*scoreA).toFixed(2)+"%"
+        this.rightTextRef.current.innerText="right eye confidence: "+(100*scoreB).toFixed(2)+"%"
 
-                this.outputCtx.drawImage(this.inputCanvasRef.current,
-                    0,
-                    0,
-                    this.destDim,
-                    this.destDim,
-                    0,
-                    0,
-                    this.destDim,
-                    this.destDim)
+        // this.drawCenter(boxA,"rgb(0,255,255)");
+        // this.drawCenter(boxB,"rgb(0,255,255)");
+    }
 
-                let imgTensor = tf.expandDims(tf.browser.fromPixels(this.inputCanvasRef.current), 0);
+    updateOutputCanvas(){
+        this.outputCtx.drawImage(this.inputCanvasRef.current,
+                                0,
+                                0,
+                                this.destDim,
+                                this.destDim,
+                                0,
+                                0,
+                                this.destDim,
+                                this.destDim);
+    }
 
-                imgTensor = tf.cast(imgTensor, 'float32');
-                imgTensor = tf.div(imgTensor, 127.5);
-                imgTensor = tf.sub(imgTensor, 1);
-                const predictions = this.model.predict(imgTensor);
+    prepInput(){
+        let imgTensor = tf.expandDims(tf.browser.fromPixels(this.inputCanvasRef.current), 0);
+        imgTensor = tf.cast(imgTensor, 'float32');
+        imgTensor = tf.div(imgTensor, 127.5);
+        imgTensor = tf.sub(imgTensor, 1);
 
-                this.parsePredictions(predictions);
-                this.recoverBboxes();
+        return imgTensor;
+    }
 
-                let boxes = this.bboxes.arraySync()
-                let nmsResult = tf.image.nonMaxSuppressionWithScore(this.bboxes,
-                                                                    this.confidence,
-                                                                    2,
-                                                                    undefined,
-                                                                    undefined,
-                                                                    this.nmsSigma);
-                let nmsIdx=nmsResult.selectedIndices;
-                nmsIdx=nmsIdx.dataSync();
-                let nmsScores=nmsResult.selectedScores;
-                nmsScores=nmsScores.dataSync();
+    getBoxesAndScores(predictions){
+        this.parsePredictions(predictions);
+        this.recoverBboxes();
 
-                let scoreA=nmsScores[0];
-                let scoreB=nmsScores[1];
+        let boxes = this.bboxes.arraySync()
+        let nmsResult = tf.image.nonMaxSuppressionWithScore(this.bboxes,
+                                                            this.confidence,
+                                                            2,
+                                                            undefined,
+                                                            undefined,
+                                                            this.nmsSigma);
+        let nmsIdx=nmsResult.selectedIndices;
+        nmsIdx=nmsIdx.dataSync();
+        let nmsScores=nmsResult.selectedScores;
+        nmsScores=nmsScores.dataSync();
 
-                let boxA=boxes[nmsIdx[0]];
-                let boxB=boxes[nmsIdx[1]];
+        let scoreA=nmsScores[0];
+        let scoreB=nmsScores[1];
 
-                if (scoreA > this.threshold && scoreB > this.threshold) {
-                    this.drawBox(boxA, "rgb(0,255,0)")
-                    this.drawBox(boxB, "rgb(0,255,0)")
-                    this.leftTextRef.current.innerText="left eye confidence: "+(100*scoreA).toFixed(2)+"%"
-                    this.rightTextRef.current.innerText="right eye confidence: "+(100*scoreB).toFixed(2)+"%"
-                }
-                console.log(scoreA,scoreB)
-            })
+        let boxA;
+        let boxB;
 
-        const t1=performance.now()
+        if (boxes[nmsIdx[0]][1]<boxes[nmsIdx[1]][1]){
+            boxA=boxes[nmsIdx[1]];
+            boxB=boxes[nmsIdx[0]];
+        }
+        else{
+            boxA=boxes[nmsIdx[0]];
+            boxB=boxes[nmsIdx[1]];
+        }
+
+        return [scoreA,scoreB,boxA,boxB]
+    }
+
+    logFps(t0,t1){
         const elapsed=(t1-t0)/1000.0
         const fps=Math.round(1.0/elapsed)
         this.fpsTextRef.current.innerText="fps: "+fps
+    }
+
+    boxCrop=(box,ctx)=>{
+        const cenX=(box[1]+box[3])/2
+        const cenY=(box[0]+box[2])/2
+        const h=box[2]-box[0]
+        const w=box[3]-box[1]
+
+        const cropSize=Math.max(h,w);
+
+        const originX=cenX-cropSize/2;
+        const originY=cenY-cropSize/2;
+
+        ctx.drawImage(this.inputCanvasRef.current,
+                    originX,
+                    originY,
+                    cropSize,
+                    cropSize,
+                    0,
+                    0,
+                    this.destDim,
+                    this.destDim);
+    }
+    synchroPredict=()=> {
+        const t0 = performance.now()
+
+        tf.tidy(() => {
+                this.cropToCanvas();
+                this.updateOutputCanvas();
+
+                const modelInput=this.prepInput();
+                const predictions = this.detectorModel.predict(modelInput);
+                const [scoreA,scoreB,boxA,boxB]=this.getBoxesAndScores(predictions);
+
+                if (scoreA > this.threshold && scoreB > this.threshold) {
+                    this.visualize(scoreA,scoreB,boxA,boxB);
+                    this.boxCrop(boxA,this.leftCtx);
+                    this.boxCrop(boxB,this.rightCtx);
+                }
+            })
+
+        const t1=performance.now()
+        this.logFps(t0,t1);
         window.requestAnimationFrame(this.synchroPredict)
     }
 
-    setCropProps=(stream)=>{
-        this.videoHeight=stream.getVideoTracks()[0].getSettings().height;
-        this.videoWidth =stream.getVideoTracks()[0].getSettings().width;
-
-        const cen_x=this.videoWidth/2
-        const cen_y=this.videoHeight/2
-
-        this.cropDim=this.destDim/this.sf
-        this.videoOriginX=cen_x-this.cropDim/2
-        this.videoOriginY=cen_y-this.cropDim/2
-    }
-
-    startWebcam=()=>{
-        if (navigator.mediaDevices.getUserMedia){
-            navigator.mediaDevices.getUserMedia({
-                video:true,
-                audio:false,
-            }).then(stream=>{
-                this.videoRef.current.srcObject=stream;
-                this.videoRef.current.style.display='none'
-                this.inputCanvasRef.current.style.display='none'
-                this.setCropProps(stream)
-
-                this.synchroPredict();
-            })
-        }
-    }
 
     render(){
         return (
@@ -294,11 +300,16 @@ class App extends React.Component {
                         <canvas id='inputCanvasId' className="inputCanvas" width={224} height={224} ref={this.inputCanvasRef}/>
                     </div>
 
-                    <div className="output">
+
+                <div className="output">
+                        <canvas className="leftEyeCanvas" width={224} height={224} ref={this.leftCanvasRef}/>
                         <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
-                    </div>
+                        <canvas className="rightEyeCanvas" width={224} height={224} ref={this.rightCanvasRef}/>
 
                 </div>
+
+                </div>
+
 
                 <button onClick={this.startWebcam}>enable webcam</button>
                 <p className="note" ref={this.leftTextRef}>left eye confidence:</p>
@@ -306,7 +317,6 @@ class App extends React.Component {
                 <p className="note" ref={this.fpsTextRef}>fps:</p>
 
                 <a href="https://github.com/jhanmtl/eye-detector" >github repo</a>
-
             </div>
         );
     }

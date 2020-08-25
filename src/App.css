@@ -47,6 +47,8 @@
   transform: rotateY(180deg);
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .container{
@@ -64,3 +66,11 @@
 .note{
   font-size: 10pt;
 }
+
+.leftEyeCanvas, .rightEyeCanvas{
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+  -moz-transform:rotateY(180deg); /* Firefox */
+  border: 1px solid red;
+}
+
