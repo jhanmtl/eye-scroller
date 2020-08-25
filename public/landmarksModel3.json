@@ -3663,7 +3663,7 @@
   "weightsManifest": [
     {
       "paths": [
-        "detectorWeights3.bin"
+        "landmarksWeights3.bin"
       ],
       "weights": [
         {
