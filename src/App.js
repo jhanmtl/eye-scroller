@@ -192,11 +192,19 @@ class App extends React.Component {
                                 this.destDim);
     }
 
-    prepInput(canvas){
+    prepDetectorInput(canvas){
         let imgTensor = tf.expandDims(tf.browser.fromPixels(canvas), 0);
         imgTensor = tf.cast(imgTensor, 'float32');
         imgTensor = tf.div(imgTensor, 127.5);
         imgTensor = tf.sub(imgTensor, 1);
+
+        return imgTensor;
+    }
+
+    prepLandmarkInput(canvas){
+        let imgTensor = tf.expandDims(tf.browser.fromPixels(canvas), 0);
+        imgTensor = tf.cast(imgTensor, 'float32');
+        imgTensor = tf.div(imgTensor, 255.0);
 
         return imgTensor;
     }
@@ -247,7 +255,8 @@ class App extends React.Component {
         const h=box[2]-box[0]
         const w=box[3]-box[1]
 
-        const cropSize=Math.max(h,w);
+        let cropSize=Math.max(h,w);
+        cropSize+=10;
 
         const originX=cenX-cropSize/2;
         const originY=cenY-cropSize/2;
@@ -264,7 +273,7 @@ class App extends React.Component {
     }
 
     predictLandmarks(inputCanvas){
-        const landmarksModelInput=this.prepInput(inputCanvas);
+        const landmarksModelInput=this.prepLandmarkInput(inputCanvas);
         let landmarkPredictions=this.landmarksModel.predict(landmarksModelInput);
         landmarkPredictions=landmarkPredictions.reshape([4,2]);
         landmarkPredictions=tf.cast(landmarkPredictions,'int32');
@@ -290,7 +299,7 @@ class App extends React.Component {
                 this.cropToCanvas();
                 this.updateOutputCanvas();
 
-                const detectorModelInput=this.prepInput(this.inputCanvasRef.current);
+                const detectorModelInput=this.prepDetectorInput(this.inputCanvasRef.current);
                 const predictions = this.detectorModel.predict(detectorModelInput);
                 const [scoreLeft,scoreRight,boxLeft,boxRight]=this.getBoxesAndScores(predictions);
 
