@@ -67,7 +67,7 @@ class App extends React.Component {
             this.detectorModel=loadedModel;
         });
 
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/08-25-mobilenent-model.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/08-25-mobilenet-2-model.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
         });
 
@@ -201,13 +201,18 @@ class App extends React.Component {
         return imgTensor;
     }
 
-    prepLandmarkInput(canvas){
-        let imgTensor = tf.expandDims(tf.browser.fromPixels(canvas), 0);
-        imgTensor = tf.cast(imgTensor, 'float32');
-        imgTensor = tf.div(imgTensor, 127.5);
-        imgTensor = tf.sub(imgTensor, 1);
+    prepLandmarkInput(){
+        let imgTensorLeft = tf.expandDims(tf.browser.fromPixels(this.leftCanvasRef.current), 0);
+        imgTensorLeft = tf.cast(imgTensorLeft, 'float32');
+        imgTensorLeft = tf.div(imgTensorLeft, 127.5);
+        imgTensorLeft = tf.sub(imgTensorLeft, 1);
 
-        return imgTensor;
+        let imgTensorRight = tf.expandDims(tf.browser.fromPixels(this.rightCanvasRef.current), 0);
+        imgTensorRight = tf.cast(imgTensorRight, 'float32');
+        imgTensorRight = tf.div(imgTensorRight, 127.5);
+        imgTensorRight = tf.sub(imgTensorRight, 1);
+
+        return tf.concat([imgTensorLeft,imgTensorRight],0);
     }
 
     getBoxesAndScores(predictions){
@@ -269,14 +274,14 @@ class App extends React.Component {
                     cropSize,
                     0,
                     0,
-                    this.destDim,
-                    this.destDim);
+                    96,
+                    96);
     }
 
-    predictLandmarks(inputCanvas){
-        const landmarksModelInput=this.prepLandmarkInput(inputCanvas);
+    predictLandmarks(){
+        const landmarksModelInput=this.prepLandmarkInput();
         let landmarkPredictions=this.landmarksModel.predict(landmarksModelInput);
-        landmarkPredictions=landmarkPredictions.reshape([4,2]);
+        landmarkPredictions=landmarkPredictions.reshape([2,4,2]);
         landmarkPredictions=tf.cast(landmarkPredictions,'int32');
         return landmarkPredictions
     }
@@ -311,10 +316,18 @@ class App extends React.Component {
                     this.boxCrop(boxLeft,this.leftCtx);
                     this.boxCrop(boxRight,this.rightCtx);
 
-                    let leftLandmarks=this.predictLandmarks(this.leftCanvasRef.current);
-                    let rightLandmarks=this.predictLandmarks(this.leftCanvasRef.current);
+                    const landmarkModelInput=this.prepLandmarkInput();
+                    let landmarkPredictions=this.landmarksModel.predict(landmarkModelInput);
+                    landmarkPredictions=tf.cast(landmarkPredictions,'int32');
+
+                    let leftLandmarks=tf.gather(landmarkPredictions,0,0);
+                    leftLandmarks=tf.reshape(leftLandmarks,[4,2])
                     leftLandmarks=leftLandmarks.arraySync();
+
+                    let rightLandmarks=tf.gather(landmarkPredictions,1,0);
+                    rightLandmarks=tf.reshape(rightLandmarks,[4,2])
                     rightLandmarks=rightLandmarks.arraySync();
+
 
                     this.drawLandmarks(leftLandmarks,this.leftCtx,'rgb(0,255,255)');
                     this.drawLandmarks(rightLandmarks,this.rightCtx,'rgb(0,255,255)');
@@ -331,7 +344,7 @@ class App extends React.Component {
     render(){
         return (
             <div className="App">
-                <p className="title">Eye Detector: tensorflowjs + react</p>
+                <p className="title">Blink Detector: tensorflowjs + react</p>
 
                 <div className="container">
                     <div className="videoUnderlay">
@@ -344,9 +357,9 @@ class App extends React.Component {
 
 
                 <div className="output">
-                        <canvas className="leftEyeCanvas" width={224} height={224} ref={this.leftCanvasRef}/>
+                        <canvas className="leftEyeCanvas" width={96} height={96} ref={this.leftCanvasRef}/>
                         <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
-                        <canvas className="rightEyeCanvas" width={224} height={224} ref={this.rightCanvasRef}/>
+                        <canvas className="rightEyeCanvas" width={96} height={96} ref={this.rightCanvasRef}/>
 
                 </div>
 
