@@ -67,7 +67,7 @@ class App extends React.Component {
             this.detectorModel=loadedModel;
         });
 
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/08-25-mobilenet-2-model.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/08-26-mobilenent-035-96x96.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
         });
 

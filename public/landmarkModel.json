@@ -111,7 +111,7 @@
   "weightsManifest": [
     {
       "paths": [
-        "08-26-mobilenent-035-96x96.bin"
+        "landmarkModelWeights.bin"
       ],
       "weights": [
         {
