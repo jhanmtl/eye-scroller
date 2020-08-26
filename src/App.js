@@ -50,6 +50,8 @@ class App extends React.Component {
         this.destDim=224;
         this.sf=0.75;
 
+        this.eyeDim=128;
+
         this.threshold=0.55;
         this.nmsSigma=0.025;
     }
@@ -274,8 +276,8 @@ class App extends React.Component {
                     cropSize,
                     0,
                     0,
-                    96,
-                    96);
+                    this.eyeDim,
+                    this.eyeDim);
     }
 
     predictLandmarks(){
@@ -357,9 +359,9 @@ class App extends React.Component {
 
 
                 <div className="output">
-                        <canvas className="leftEyeCanvas" width={96} height={96} ref={this.leftCanvasRef}/>
+                        <canvas className="leftEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.leftCanvasRef}/>
                         <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
-                        <canvas className="rightEyeCanvas" width={96} height={96} ref={this.rightCanvasRef}/>
+                        <canvas className="rightEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.rightCanvasRef}/>
 
                 </div>
 
