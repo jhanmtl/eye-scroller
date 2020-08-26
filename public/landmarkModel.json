@@ -26,7 +26,7 @@
             }
           },
           {
-            "class_name": "Model",
+            "class_name": "Model2",
             "config": {
               "name": "keras_layer_6",
               "trainable": true,
