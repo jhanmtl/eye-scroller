@@ -67,7 +67,7 @@ class App extends React.Component {
             this.detectorModel=loadedModel;
         });
 
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/efficientModel.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/08-25-mobilenent-model.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
         });
 
@@ -204,7 +204,8 @@ class App extends React.Component {
     prepLandmarkInput(canvas){
         let imgTensor = tf.expandDims(tf.browser.fromPixels(canvas), 0);
         imgTensor = tf.cast(imgTensor, 'float32');
-        imgTensor = tf.div(imgTensor, 255.0);
+        imgTensor = tf.div(imgTensor, 127.5);
+        imgTensor = tf.sub(imgTensor, 1);
 
         return imgTensor;
     }
