@@ -26,7 +26,7 @@
             }
           },
           {
-            "class_name": "Model2",
+            "class_name": "Model",
             "config": {
               "name": "keras_layer_6",
               "trainable": true,
@@ -111,7 +111,7 @@
   "weightsManifest": [
     {
       "paths": [
-        "landmarkModelWeights.bin"
+        "group1-shard1of1.bin"
       ],
       "weights": [
         {
