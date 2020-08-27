@@ -66,12 +66,11 @@ class App extends React.Component {
         this.hhat =priorSplits[3]
 
         tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/detectorModel.json").then(loadedModel=>{
-            this.detectorModel=loadedModel;
-        });
-
+                                this.detectorModel=loadedModel;
+                            });
         tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/landmarkModel.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
-        });
+                            });
 
         this.inputCtx=this.inputCanvasRef.current.getContext('2d');
         this.outputCtx=this.outputCanvasRef.current.getContext('2d');
