@@ -50,7 +50,7 @@ class App extends React.Component {
         this.destDim=224;
         this.sf=0.75;
 
-        this.eyeDim=224;
+        this.eyeDim=160;
 
         this.threshold=0.55;
         this.nmsSigma=0.025;
@@ -323,11 +323,11 @@ class App extends React.Component {
                     landmarkPredictions=tf.cast(landmarkPredictions,'int32');
 
                     let leftLandmarks=tf.gather(landmarkPredictions,0,0);
-                    leftLandmarks=tf.reshape(leftLandmarks,[8,2])
+                    leftLandmarks=tf.reshape(leftLandmarks,[4,2])
                     leftLandmarks=leftLandmarks.arraySync();
 
                     let rightLandmarks=tf.gather(landmarkPredictions,1,0);
-                    rightLandmarks=tf.reshape(rightLandmarks,[8,2])
+                    rightLandmarks=tf.reshape(rightLandmarks,[4,2])
                     rightLandmarks=rightLandmarks.arraySync();
 
 
@@ -362,7 +362,6 @@ class App extends React.Component {
                         <canvas className="leftEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.leftCanvasRef}/>
                         <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
                         <canvas className="rightEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.rightCanvasRef}/>
-
                 </div>
 
                 </div>

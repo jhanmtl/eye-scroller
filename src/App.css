@@ -51,6 +51,10 @@
   margin-right: 10px;
 }
 
+.output{
+  height:224px;
+}
+
 .container{
   display: grid;
   margin-bottom: 15px;
@@ -72,5 +76,6 @@
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
   border: 1px solid black;
+  margin-bottom: 32px;
 }
 
