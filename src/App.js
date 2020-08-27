@@ -52,7 +52,7 @@ class App extends React.Component {
 
         this.eyeDim=160;
 
-        this.threshold=0.55;
+        this.threshold=0.4;
         this.nmsSigma=0.025;
     }
 
@@ -68,7 +68,7 @@ class App extends React.Component {
         tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/detectorModel.json").then(loadedModel=>{
                                 this.detectorModel=loadedModel;
                             });
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/landmarkModel.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/08-26-mobilenet-block5-cutoff-160x160.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
                             });
 
@@ -345,7 +345,7 @@ class App extends React.Component {
     render(){
         return (
             <div className="App">
-                <p className="title">Blink Detector: tensorflowjs + react</p>
+                <p className="title">blink detector: tensorflowjs + react</p>
 
                 <div className="container">
                     <div className="videoUnderlay">
