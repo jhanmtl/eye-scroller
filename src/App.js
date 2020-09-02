@@ -50,8 +50,8 @@ class App extends React.Component {
         this.destDim=224;
         this.sf=0.75;
 
-        this.eyeDim=112;
-        this.landmarkCount=8;
+        this.eyeDim=96;
+        this.landmarkCount=4;
 
         this.threshold=0.6;
         this.nmsSigma=0.025;
@@ -289,8 +289,9 @@ class App extends React.Component {
     }
 
     drawLandmarks(landmarks,ctx,style){
-        ctx.fillStyle='rgb(0,0,0)'
-        ctx.fillRect(0,0,this.eyeDim,this.eyeDim)
+        // ctx.fillStyle='rgb(0,0,0)'
+        // ctx.fillRect(0,0,this.eyeDim,this.eyeDim)
+
         // for (let i=0;i<landmarks.length;i++){
         //     ctx.beginPath();
         //     const landmark=landmarks[i];
@@ -320,23 +321,21 @@ class App extends React.Component {
             ctx.stroke();
         }
 
-        // const topMarker=landmarks[1]
-        // const bottomMarker=landmarks[3]
-        // const centerX=(topMarker[0]+bottomMarker[0])/2
-        // const centerY=(topMarker[1]+bottomMarker[1])/2
-        // const radius=Math.abs((bottomMarker[1]-topMarker[1])/2)
-        //
-        // ctx.beginPath();
-        // ctx.arc(centerX,centerY,radius,0,2*Math.PI);
-        // ctx.strokeStyle=style;
-        // ctx.stroke();
+        const topMarker=landmarks[1]
+        const bottomMarker=landmarks[3]
+        const centerX=(topMarker[0]+bottomMarker[0])/2
+        const centerY=(topMarker[1]+bottomMarker[1])/2
+        const radius=Math.abs((bottomMarker[1]-topMarker[1])/2)
 
-        // ctx.beginPath();
-        // ctx.arc(centerX,centerY,radius/2,0,2*Math.PI);
-        // ctx.fillStyle=style;
-        // ctx.fill();
+        ctx.beginPath();
+        ctx.arc(centerX,centerY,radius,0,2*Math.PI);
+        ctx.strokeStyle=style;
+        ctx.stroke();
 
-
+        ctx.beginPath();
+        ctx.arc(centerX,centerY,radius/2,0,2*Math.PI);
+        ctx.fillStyle=style;
+        ctx.fill();
     }
 
     synchroPredict=()=> {
