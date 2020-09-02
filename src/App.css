@@ -76,6 +76,6 @@
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
   border: 1px solid black;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 
