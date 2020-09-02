@@ -51,8 +51,9 @@ class App extends React.Component {
         this.sf=0.75;
 
         this.eyeDim=160;
+        this.landmarkCount=8;
 
-        this.threshold=0.4;
+        this.threshold=0.6;
         this.nmsSigma=0.025;
     }
 
@@ -68,7 +69,7 @@ class App extends React.Component {
         tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/detectorModel.json").then(loadedModel=>{
                                 this.detectorModel=loadedModel;
                             });
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/08-26-mobilenet-block5-cutoff-160x160.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/landmarkModel.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
                             });
 
@@ -288,6 +289,9 @@ class App extends React.Component {
     }
 
     drawLandmarks(landmarks,ctx,style){
+        // ctx.clearRect(0,0,160,160)
+        ctx.fillStyle="rgb(0,0,0)";
+        ctx.fillRect(0,0,160,160);
         for (let i=0;i<landmarks.length;i++){
             ctx.beginPath();
             const landmark=landmarks[i];
@@ -322,11 +326,11 @@ class App extends React.Component {
                     landmarkPredictions=tf.cast(landmarkPredictions,'int32');
 
                     let leftLandmarks=tf.gather(landmarkPredictions,0,0);
-                    leftLandmarks=tf.reshape(leftLandmarks,[4,2])
+                    leftLandmarks=tf.reshape(leftLandmarks,[this.landmarkCount,2])
                     leftLandmarks=leftLandmarks.arraySync();
 
                     let rightLandmarks=tf.gather(landmarkPredictions,1,0);
-                    rightLandmarks=tf.reshape(rightLandmarks,[4,2])
+                    rightLandmarks=tf.reshape(rightLandmarks,[this.landmarkCount,2])
                     rightLandmarks=rightLandmarks.arraySync();
 
 
