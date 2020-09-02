@@ -49,9 +49,9 @@ class App extends React.Component {
         this.videoOriginY=undefined;
         this.cropDim=undefined;
         this.destDim=224;
-        this.sf=0.75;
+        this.sf=1.0;
 
-        this.eyeDim=96;
+        this.eyeDim=112;
         this.landmarkCount=4;
 
         this.threshold=0.6;
@@ -70,7 +70,7 @@ class App extends React.Component {
         tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/detectorModel.json").then(loadedModel=>{
                                 this.detectorModel=loadedModel;
                             });
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/landmarkModel2.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/landmarkModel3.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
                             });
 
@@ -79,6 +79,7 @@ class App extends React.Component {
         this.leftCtx=this.leftCanvasRef.current.getContext('2d');
         this.rightCtx=this.rightCanvasRef.current.getContext('2d');
 
+        this.fillBlack();
         console.log(tf.getBackend())
     }
 
@@ -290,12 +291,21 @@ class App extends React.Component {
                     this.eyeDim);
     }
 
-    predictLandmarks(){
-        const landmarksModelInput=this.prepLandmarkInput();
-        let landmarkPredictions=this.landmarksModel.predict(landmarksModelInput);
-        landmarkPredictions=landmarkPredictions.reshape([2,4,2]);
-        landmarkPredictions=tf.cast(landmarkPredictions,'int32');
-        return landmarkPredictions
+    predictLandmarks(inputCanvas){
+        const input=this.prepLandmarkInputSingle(inputCanvas);
+        let prediction=this.landmarksModel.predict(input);
+        prediction=tf.cast(prediction,'int32');
+        prediction=tf.reshape(prediction,[this.landmarkCount,2])
+        let landmarks=prediction.arraySync();
+        return landmarks;
+    }
+
+    fillBlack(){
+        const blackBg='rgb(0,0,0)';
+        this.leftCtx.fillStyle=blackBg;
+        this.rightCtx.fillStyle=blackBg;
+        this.leftCtx.fillRect(0,0,this.eyeDim,this.eyeDim);
+        this.rightCtx.fillRect(0,0,this.eyeDim,this.eyeDim);
     }
 
     drawLandmarks(landmarks,ctx,style){
@@ -366,36 +376,15 @@ class App extends React.Component {
                     this.boxCrop(boxLeft,this.leftCtx);
                     this.boxCrop(boxRight,this.rightCtx);
 
-                    // const landmarkModelInput=this.prepLandmarkInput();
-                    // let landmarkPredictions=this.landmarksModel.predict(landmarkModelInput);
-                    // landmarkPredictions=tf.cast(landmarkPredictions,'int32');
-                    //
-                    // let leftLandmarks=tf.gather(landmarkPredictions,0,0);
-                    // leftLandmarks=tf.reshape(leftLandmarks,[this.landmarkCount,2])
-                    // leftLandmarks=leftLandmarks.arraySync();
-                    //
-                    // let rightLandmarks=tf.gather(landmarkPredictions,1,0);
-                    // rightLandmarks=tf.reshape(rightLandmarks,[this.landmarkCount,2])
-                    // rightLandmarks=rightLandmarks.arraySync();
-                    //
-                    //
-                    // this.drawLandmarks(leftLandmarks,this.leftCtx,'rgb(0,255,255)');
-                    // this.drawLandmarks(rightLandmarks,this.rightCtx,'rgb(0,255,255)');
-
-                    const leftInput=this.prepLandmarkInputSingle(this.leftCanvasRef.current);
-                    let leftPrediction=this.landmarksModel.predict(leftInput);
-                    leftPrediction=tf.cast(leftPrediction,'int32');
-                    leftPrediction=tf.reshape(leftPrediction,[this.landmarkCount,2])
-                    let leftLandmarks=leftPrediction.arraySync();
+                    let leftLandmarks=this.predictLandmarks(this.leftCanvasRef.current)
                     this.drawLandmarks(leftLandmarks,this.leftCtx,'rgb(0,255,255)');
 
-                    const rightInput=this.prepLandmarkInputSingle(this.rightCanvasRef.current);
-                    let rightPrediction=this.landmarksModel.predict(rightInput);
-                    rightPrediction=tf.cast(rightPrediction,'int32');
-                    rightPrediction=tf.reshape(rightPrediction,[this.landmarkCount,2])
-                    let rightLandmarks=rightPrediction.arraySync();
+                    let rightLandmarks=this.predictLandmarks(this.rightCanvasRef.current)
                     this.drawLandmarks(rightLandmarks,this.rightCtx,'rgb(0,255,255)');
 
+                }
+                else{
+                    this.fillBlack();
                 }
             })
 
@@ -409,6 +398,8 @@ class App extends React.Component {
         return (
             <div className="App">
                 <p className="title">blink detector: tensorflowjs + react</p>
+
+                <p className="note">eye detection</p>
 
                 <div className="container">
                     <div className="videoUnderlay">
@@ -424,15 +415,17 @@ class App extends React.Component {
                         <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
                 </div>
 
-                    <div>
-                        <canvas className="leftEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.leftCanvasRef}/>
-                        <canvas className="rightEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.rightCanvasRef}/>
-                    </div>
+                    <p className="note">eye extraction</p>
+
+                <div>
+                    <canvas className="leftEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.leftCanvasRef}/>
+                    <canvas className="rightEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.rightCanvasRef}/>
+                </div>
                     
                 </div>
 
 
-                <button onClick={this.startWebcam}>enable webcam</button>
+                <button onClick={this.startWebcam}>start model</button>
                 <p className="note" ref={this.leftTextRef}>left eye confidence:</p>
                 <p className="note" ref={this.rightTextRef}>right eye confidence:</p>
                 <p className="note" ref={this.fpsTextRef}>fps:</p>

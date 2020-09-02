@@ -38,8 +38,9 @@
 }
 
 
-#webCam{
 
+#webCam{
+  padding: 0px;
 }
 
 .inputCanvas,.outputCanvas{
@@ -47,8 +48,6 @@
   transform: rotateY(180deg);
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .output{
@@ -57,24 +56,28 @@
 
 .container{
   display: grid;
-  margin-bottom: 15px;
 }
 
-.videoUnderlay, .input, .output{
+.videoUnderlay, .output, .input{
   grid-area:1/1;
+  height: 224px;
 }
 
 .title{
   font-size: 11pt;
+  margin-bottom: 30px;
+  text-decoration: underline;
 }
 .note{
   font-size: 10pt;
+  margin-bottom: 10px;
 }
 
 .leftEyeCanvas, .rightEyeCanvas{
   transform: rotateY(180deg);
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+  margin-bottom: 20px;
 }
 
