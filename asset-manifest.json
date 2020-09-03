@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/eye-scroller/static/css/main.d0751832.chunk.css",
-    "main.js": "/eye-scroller/static/js/main.67988db4.chunk.js",
-    "main.js.map": "/eye-scroller/static/js/main.67988db4.chunk.js.map",
+    "main.js": "/eye-scroller/static/js/main.1e503ac1.chunk.js",
+    "main.js.map": "/eye-scroller/static/js/main.1e503ac1.chunk.js.map",
     "runtime-main.js": "/eye-scroller/static/js/runtime-main.11df09ae.js",
     "runtime-main.js.map": "/eye-scroller/static/js/runtime-main.11df09ae.js.map",
-    "static/js/2.ec901264.chunk.js": "/eye-scroller/static/js/2.ec901264.chunk.js",
-    "static/js/2.ec901264.chunk.js.map": "/eye-scroller/static/js/2.ec901264.chunk.js.map",
+    "static/js/2.8d94e6af.chunk.js": "/eye-scroller/static/js/2.8d94e6af.chunk.js",
+    "static/js/2.8d94e6af.chunk.js.map": "/eye-scroller/static/js/2.8d94e6af.chunk.js.map",
     "index.html": "/eye-scroller/index.html",
-    "precache-manifest.db758a579042c5689b8263421bfdfa8b.js": "/eye-scroller/precache-manifest.db758a579042c5689b8263421bfdfa8b.js",
+    "precache-manifest.1d4357d6854ca2781bce4b93ef72f078.js": "/eye-scroller/precache-manifest.1d4357d6854ca2781bce4b93ef72f078.js",
     "service-worker.js": "/eye-scroller/service-worker.js",
     "static/css/main.d0751832.chunk.css.map": "/eye-scroller/static/css/main.d0751832.chunk.css.map",
-    "static/js/2.ec901264.chunk.js.LICENSE.txt": "/eye-scroller/static/js/2.ec901264.chunk.js.LICENSE.txt"
+    "static/js/2.8d94e6af.chunk.js.LICENSE.txt": "/eye-scroller/static/js/2.8d94e6af.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.11df09ae.js",
-    "static/js/2.ec901264.chunk.js",
+    "static/js/2.8d94e6af.chunk.js",
     "static/css/main.d0751832.chunk.css",
-    "static/js/main.67988db4.chunk.js"
+    "static/js/main.1e503ac1.chunk.js"
   ]
 }
