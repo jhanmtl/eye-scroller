@@ -1,5 +1,21 @@
+body{
+  background-color: lightgray;
+  height: 100vh;
+  width: 100vw;
+}
+
 .App {
   text-align: center;
+  box-sizing: border-box;
+
+  width: 800px;
+  height: 720px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -360px 0 0 -400px;
 }
 
 .App-logo {
@@ -56,6 +72,20 @@
 
 .container{
   display: grid;
+  width: 300px;
+  /*height: 720px;*/
+  /*border: 1px solid red;*/
+}
+
+.controlPaper{
+  width: 300px;
+  height: 720px;
+}
+
+.textPaper{
+  width: 480px;
+  height: 700px;
+  padding-top: 20px;
 }
 
 .videoUnderlay, .output, .input{
@@ -65,8 +95,11 @@
 
 .title{
   font-size: 11pt;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
+  margin:0px;
+  padding-top: 30px;
   text-decoration: underline;
+  /*border: 1px solid violet;*/
 }
 .note{
   font-size: 10pt;
@@ -78,6 +111,34 @@
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
   /*border: 1px solid black;*/
-  margin-bottom: 20px;
 }
 
+.controlPanel{
+  /*width:300px;*/
+  height: 720px;
+  /*border: 1px solid blue;*/
+  padding: 0px;
+}
+
+.textWindow{
+  width: 480px;
+  height: 720px;
+  /*border: 1px solid red;*/
+}
+
+.overall{
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 1fr 1fr; /* fraction*/
+  /*border: 1px solid green;*/
+}
+
+.textContent{
+  top:10px;
+  margin-left: 20px;
+  width:440px;
+  height:680px;
+  text-align: justify;
+  font-size: 12px;
+  /*border: 1px solid;*/
+}

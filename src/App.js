@@ -2,6 +2,10 @@ import React from 'react';
 import * as tf from "@tensorflow/tfjs"
 import './App.css';
 import {priors} from './priors'
+import Paper from '@material-ui/core/Paper';
+import {MyButton} from "./components/MyButton";
+import Scrollbar from "react-scrollbars-custom";
+import {text} from "./text"
 
 class App extends React.Component {
 
@@ -205,20 +209,6 @@ class App extends React.Component {
         return imgTensor;
     }
 
-    prepLandmarkInput(){
-        let imgTensorLeft = tf.expandDims(tf.browser.fromPixels(this.leftCanvasRef.current), 0);
-        imgTensorLeft = tf.cast(imgTensorLeft, 'float32');
-        imgTensorLeft = tf.div(imgTensorLeft, 127.5);
-        imgTensorLeft = tf.sub(imgTensorLeft, 1);
-
-        let imgTensorRight = tf.expandDims(tf.browser.fromPixels(this.rightCanvasRef.current), 0);
-        imgTensorRight = tf.cast(imgTensorRight, 'float32');
-        imgTensorRight = tf.div(imgTensorRight, 127.5);
-        imgTensorRight = tf.sub(imgTensorRight, 1);
-
-        return tf.concat([imgTensorLeft,imgTensorRight],0);
-    }
-
     prepLandmarkInputSingle(canvas){
         let imgTensor = tf.expandDims(tf.browser.fromPixels(canvas), 0);
         imgTensor = tf.cast(imgTensor, 'float32');
@@ -397,40 +387,60 @@ class App extends React.Component {
     render(){
         return (
             <div className="App">
-                <p className="title">blink detector: tensorflowjs + react</p>
+                <div className="overall">
+                    <div className="controlPanel">
+                        <Paper className="controlPaper" elevation={4}>
+                            <p className="title">blink detector: tensorflowjs + react</p>
 
-                <p className="note">eye detection</p>
+                            <p className="note">eye detection</p>
 
-                <div className="container">
-                    <div className="videoUnderlay">
-                        <video id="webCam" autoPlay ref={this.videoRef}/>
+                            <div className="container">
+                                <div className="videoUnderlay">
+                                    <video id="webCam" autoPlay ref={this.videoRef}/>
+                                </div>
+
+                                <div className="input">
+                                    <canvas id='inputCanvasId' className="inputCanvas" width={224} height={224} ref={this.inputCanvasRef}/>
+                                </div>
+
+
+                                <div className="output">
+                                        <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
+                                </div>
+
+                                    <p className="note">eye extraction</p>
+
+                                <div>
+                                    <canvas className="leftEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.leftCanvasRef}/>
+                                    <canvas className="rightEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.rightCanvasRef}/>
+                                </div>
+
+
+
+                                <MyButton onClick={this.startWebcam}>start model</MyButton>
+                                <p className="note" ref={this.leftTextRef}>left eye confidence:</p>
+                                <p className="note" ref={this.rightTextRef}>right eye confidence:</p>
+                                <p className="note" ref={this.fpsTextRef}>fps:</p>
+
+                                <a href="https://github.com/jhanmtl/eye-detector" className="repoLink">github repo</a>
+                            </div>
+
+                        </Paper>
                     </div>
 
-                    <div className="input">
-                        <canvas id='inputCanvasId' className="inputCanvas" width={224} height={224} ref={this.inputCanvasRef}/>
+                    <div className="textWindow">
+                        <Paper className="textPaper" elevation={4}>
+                            <div className="textContent">
+                                <Scrollbar>
+                                    <p>{text}</p>
+                                </Scrollbar>
+                            </div>
+                        </Paper>
+
+
                     </div>
 
-
-                <div className="output">
-                        <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
                 </div>
-
-                    <p className="note">eye extraction</p>
-
-                <div>
-                    <canvas className="leftEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.leftCanvasRef}/>
-                    <canvas className="rightEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.rightCanvasRef}/>
-                </div>
-                    
-                </div>
-
-
-                <button onClick={this.startWebcam}>start model</button>
-                <p className="note" ref={this.leftTextRef}>left eye confidence:</p>
-                <p className="note" ref={this.rightTextRef}>right eye confidence:</p>
-                <p className="note" ref={this.fpsTextRef}>fps:</p>
-
-                <a href="https://github.com/jhanmtl/eye-detector" >github repo</a>
             </div>
         );
     }
