@@ -1,59 +1,129 @@
-export const text="Vestibulum sit amet est euismod metus iaculis euismod non non ipsum. Vivamus bibendum ligula nibh, nec lobortis urna hendrerit ut. Ut et dolor eu quam aliquam efficitur a sed diam. Suspendisse at odio ac nulla condimentum tristique. Ut mollis dolor sapien, vel imperdiet enim faucibus vel. Suspendisse ullamcorper ipsum vitae lacus scelerisque porta. Integer hendrerit dui a magna feugiat, vel condimentum dui vestibulum. Donec laoreet ac lectus non mollis. Praesent ut erat nec lacus pulvinar commodo id non lectus. Maecenas ut venenatis dui, in dictum odio. Praesent tincidunt eget magna at tristique. Quisque malesuada, risus varius sodales porta, augue magna semper sapien, nec finibus turpis quam eget risus. Sed luctus placerat velit vitae elementum. Praesent sit amet vulputate ligula. Fusce diam sapien, tincidunt a interdum id, vulputate eget ligula. Vivamus facilisis lectus ac urna pharetra, nec aliquam mi ornare.\n" +
-    "\n" +
-    "Quisque non sapien ex. Quisque finibus pulvinar posuere. Pellentesque in est sit amet nisl hendrerit semper. Aliquam interdum ac sapien sit amet vehicula. Nunc tincidunt nisi felis, in feugiat velit euismod quis. Vivamus placerat ante non nunc posuere consequat. Cras tempus tempor purus, quis commodo nisi. Pellentesque consectetur felis sed egestas aliquet. Vivamus luctus ullamcorper lorem vel imperdiet.\n" +
-    "\n" +
-    "Nullam congue ornare risus tempus varius. Maecenas vitae fringilla nisi. Phasellus hendrerit sem vitae massa malesuada, a finibus magna semper. Nullam sapien nisl, cursus quis finibus nec, sodales a massa. Sed et nibh feugiat, efficitur lectus at, ultricies ex. Duis ac facilisis mi, sit amet sodales ante. Pellentesque in scelerisque mi, et sodales metus. Vivamus id ultricies neque, consectetur elementum enim. Proin at vehicula turpis. Vivamus cursus, ligula ac luctus iaculis, elit enim maximus est, ut pretium orci nibh et mi. In vitae metus mollis, convallis tortor vel, ornare risus. Duis vulputate, nisi ut pretium eleifend, nibh ligula sagittis elit, eget efficitur dui est vel massa. Curabitur feugiat leo eget nibh dignissim, nec cursus eros mattis. Etiam in elit non ante viverra pretium id et sapien. Suspendisse commodo, leo id imperdiet consectetur, velit dolor suscipit massa, eu accumsan augue dui a felis. Ut molestie, sapien sed hendrerit sodales, urna mi condimentum dui, tincidunt pharetra neque ante sit amet elit.\n" +
-    "\n" +
-    "Pellentesque nec posuere magna. Integer luctus vulputate massa sit amet venenatis. Curabitur fringilla bibendum venenatis. Ut sit amet turpis eget risus convallis ullamcorper ut in nisl. Nam ultrices nisl vel ligula vulputate mollis eu nec nibh. Nulla congue massa ac risus tincidunt tincidunt vitae ac mauris. Vivamus facilisis euismod mauris, sit amet molestie justo mattis a. Phasellus a elit mi. Vivamus posuere est et magna luctus placerat. Praesent nec nunc diam. Donec sollicitudin risus ut mauris commodo porta. In felis ipsum, molestie sed efficitur vitae, tempus sit amet ligula.\n" +
-    "\n" +
-    "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent eu tincidunt neque. Aenean vehicula dolor ac finibus venenatis. Duis vitae ex in nibh pellentesque eleifend. Sed imperdiet rhoncus dui, a malesuada neque malesuada ut. Nullam malesuada mauris et elit pretium finibus. Mauris tristique pharetra dignissim. Phasellus non tempor elit. Sed eu urna nibh. Praesent scelerisque aliquam neque, ac lobortis lectus tempor sed.\n" +
-    "\n" +
-    "Aliquam eget vehicula purus. Vivamus feugiat imperdiet leo vel suscipit. Duis facilisis mi ut finibus blandit. Etiam finibus mauris sit amet dapibus tristique. Sed suscipit tempus molestie. Sed vel hendrerit quam. Quisque quis velit tincidunt, blandit massa sed, pulvinar massa. Etiam nec orci ut augue interdum tincidunt. Maecenas sit amet posuere risus. Morbi pellentesque imperdiet quam, et finibus augue vulputate vitae. Praesent condimentum nisi quis congue dictum.\n" +
-    "\n" +
-    "Vestibulum ac condimentum lorem. Ut vitae cursus nibh. Donec in augue sapien. Nulla facilisi. Aenean mattis dolor urna, quis ultrices tortor ornare nec. Ut vel risus nec enim varius viverra. Ut a tortor consequat, pharetra mauris pharetra, facilisis sem. In ac feugiat metus, at consequat massa. Suspendisse pretium ac diam eu volutpat. Vestibulum eget ex sit amet ipsum eleifend tincidunt quis sed ex. Cras vitae tortor ac eros aliquam vehicula. Aenean eu diam massa. Ut hendrerit, leo vitae aliquam dapibus, turpis tortor scelerisque nulla, sed elementum nulla metus vel mi. Ut quis tempor velit, vel aliquet turpis.\n" +
-    "\n" +
-    "Duis felis felis, luctus vitae metus id, posuere interdum mauris. Fusce malesuada scelerisque dui in lobortis. Donec et hendrerit enim. Phasellus sed tellus vulputate, fringilla lectus ac, posuere ex. Sed suscipit lorem a arcu faucibus malesuada. Fusce ultrices laoreet vehicula. Etiam scelerisque nunc vel maximus imperdiet. Pellentesque commodo mattis ante nec hendrerit.\n" +
-    "\n" +
-    "Cras lacus diam, fermentum nec ultrices dapibus, mattis id elit. Vivamus ultricies turpis viverra nibh cursus bibendum. Sed pulvinar sit amet ante at gravida. Integer sed volutpat sem. Fusce varius cursus orci, tristique tempor mauris. Duis at orci tempus nibh tincidunt vulputate at a sapien. Proin fringilla aliquet ante quis rhoncus. Praesent orci ex, ullamcorper luctus gravida et, tempor eu libero. Mauris rhoncus orci in risus hendrerit elementum. Integer dictum leo ultrices neque convallis, in ultricies metus viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque accumsan justo sed est consequat, et tristique erat mattis. Donec facilisis egestas sem placerat finibus. Nulla ut molestie felis.\n" +
-    "\n" +
-    "Curabitur lectus diam, congue sit amet enim vel, finibus vestibulum purus. Quisque quis justo lacinia, condimentum erat nec, lacinia massa. Vestibulum blandit urna vitae velit dapibus pretium. Mauris sit amet varius nisi, id convallis quam. Ut egestas metus sed enim auctor tempor. Aliquam vitae risus ultricies, luctus dolor vitae, elementum turpis. Vestibulum sed commodo ante, ac facilisis mauris. Suspendisse potenti. Nam vehicula, enim eget efficitur congue, diam justo congue turpis, non accumsan mauris ex ac purus. In tempor dui risus, quis dignissim odio luctus ac. Suspendisse potenti. Etiam scelerisque leo facilisis erat cursus euismod.\n" +
-    "\n" +
-    "Cras ut lectus tincidunt, pulvinar nisi sit amet, scelerisque diam. Aliquam dignissim viverra neque a ultrices. Aenean vel posuere justo. Praesent ac mi et turpis commodo gravida. In dignissim diam quis nisl tempus, at finibus magna tempor. Ut sapien est, euismod at magna vitae, tempus accumsan nunc. Sed in eleifend odio. Nullam consequat laoreet mollis. In facilisis tempor orci, quis vulputate dolor sodales ac. Pellentesque dolor sem, semper at turpis ut, eleifend congue sem. Duis ultricies id libero sed luctus. Fusce ullamcorper, libero nec tincidunt ultrices, elit dolor maximus nibh, ut rutrum nunc arcu luctus quam.\n" +
-    "\n" +
-    "Pellentesque varius semper leo, non blandit neque eleifend non. Fusce ut auctor massa, id congue risus. Proin vel diam id augue viverra accumsan. Curabitur eget tortor orci. Cras euismod nunc nec neque feugiat, sed egestas justo pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices at enim ac egestas. Curabitur sapien lacus, tristique vel purus ut, fermentum fringilla velit. Suspendisse sed dictum dolor. Cras interdum ex sapien, sit amet lobortis diam hendrerit euismod. Curabitur fringilla turpis quis velit egestas sollicitudin. Vestibulum nec risus egestas, viverra tortor in, faucibus mi. Fusce ut nisi eget tellus ornare volutpat sit amet vitae mi.\n" +
-    "\n" +
-    "Fusce consequat gravida feugiat. Donec vel lorem lacinia, iaculis lacus vitae, tempus est. Duis eu tellus ut felis consequat dignissim. Suspendisse consectetur quis velit auctor feugiat. Integer pellentesque mauris quis augue imperdiet, quis cursus justo volutpat. Ut at dolor malesuada, posuere diam at, malesuada ligula. Aenean eu scelerisque purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sem purus, dignissim eget sodales vitae, ultricies condimentum dolor. Suspendisse at suscipit augue.\n" +
-    "\n" +
-    "Duis in dolor quis leo blandit ornare eu et ex. Nulla eu magna velit. Nam eget sollicitudin elit. Vestibulum quis lorem turpis. Nulla bibendum mollis tortor non aliquet. Fusce neque sapien, efficitur vitae convallis sed, scelerisque nec risus. Donec faucibus dolor lacus, non rutrum eros mollis sed. Mauris vitae orci et dui aliquam lacinia vel gravida mauris. Fusce eleifend suscipit augue, quis volutpat libero volutpat vel. Ut cursus diam tortor, id tincidunt enim fringilla sed. Ut tempus urna ut lectus consectetur, a euismod tortor ultricies. In massa erat, ultrices et commodo et, fermentum vel ipsum. Vestibulum eget est lobortis, varius lectus sit amet, tristique mauris. Aliquam ac vestibulum purus.\n" +
-    "\n" +
-    "Sed pellentesque purus ut mollis commodo. Ut nec egestas augue, ut elementum nisi. Nulla massa urna, aliquam nec nunc sed, varius viverra nisi. Suspendisse euismod, velit quis dictum molestie, velit leo dapibus nisl, nec mattis sem elit non lacus. Sed lectus nibh, dapibus ut velit sed, tincidunt convallis orci. Donec fringilla pellentesque arcu tincidunt molestie. Nulla lacinia metus at sapien elementum semper.\n" +
-    "\n" +
-    "Curabitur vel commodo nunc. Aenean id felis sit amet libero luctus condimentum. Morbi eget vulputate neque. Sed aliquet nec orci non finibus. Pellentesque elementum erat vel elit fringilla congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In ut nulla ex. Sed egestas quis felis at condimentum. Proin placerat eget ante ut aliquet. Donec sit amet sollicitudin sapien. Quisque leo eros, fringilla vitae orci vel, suscipit rhoncus elit. Sed lacinia, purus id efficitur imperdiet, velit nisl scelerisque tellus, cursus elementum mauris augue quis arcu. Suspendisse eget ante eu ligula venenatis commodo. Sed efficitur est quis mauris vulputate ullamcorper.\n" +
-    "\n" +
-    "Morbi eu volutpat ipsum, ut pretium purus. Pellentesque eros mauris, malesuada a orci eget, tristique faucibus sem. Nam at arcu id tortor ultrices pellentesque. Sed velit lectus, tincidunt vel elementum eu, maximus nec nisl. Aliquam facilisis quam enim, nec pulvinar nunc interdum non. Etiam condimentum maximus orci nec cursus. Quisque id nibh nec nisi euismod ultrices ut quis massa. Integer id nisi arcu. Cras vel mi pellentesque, lacinia libero eu, rhoncus tortor. Donec sollicitudin sollicitudin nibh et pellentesque. Mauris euismod lectus massa, id dignissim ipsum ornare et. Quisque sagittis, tellus vel consequat maximus, nibh odio porta lectus, a efficitur turpis nulla semper diam. Nunc tempus viverra velit ut semper. Sed mi quam, placerat a enim ac, commodo auctor felis.\n" +
-    "\n" +
-    "Curabitur facilisis, eros ut sollicitudin scelerisque, mauris erat finibus felis, eu eleifend neque felis at mi. Nunc nec odio non ligula interdum consequat a vitae justo. Suspendisse at augue ut felis congue elementum ut sit amet metus. Vestibulum molestie lorem et leo hendrerit, eget euismod sem volutpat. Donec gravida erat vitae nisl varius, vitae vulputate nunc mollis. Pellentesque molestie est eu ultrices rutrum. Suspendisse volutpat rutrum sapien ac gravida. Nullam pulvinar purus vel magna viverra imperdiet. Aenean sem ipsum, eleifend commodo elit vitae, pulvinar scelerisque felis. Suspendisse potenti. Cras dignissim vestibulum lectus, ac tempor lacus auctor eget. Sed a orci consectetur, lobortis tortor id, vestibulum felis. Proin massa massa, tempor sit amet posuere sed, bibendum pretium mi.\n" +
-    "\n" +
-    "Donec ac nunc in leo ornare tempor vel vitae ipsum. Nullam ornare, nisl hendrerit lacinia commodo, felis erat pulvinar metus, ac convallis orci dui vitae magna. Integer nec iaculis odio, eget ullamcorper nisi. Cras accumsan imperdiet consectetur. Ut nec malesuada enim. Nam non dui nec sapien blandit ultricies. Cras commodo metus vitae erat condimentum dictum. In ac turpis dolor. Duis mattis urna erat, lobortis porttitor lectus porta quis. Nullam efficitur ex in diam placerat, eu tempor elit consequat. Integer nec eleifend ante, ac consectetur justo. Cras nibh odio, tempus sit amet elit in, tincidunt pretium metus.\n" +
-    "\n" +
-    "Curabitur in orci nec elit porttitor maximus ac venenatis leo. Sed orci nisi, interdum eget sodales id, commodo eget velit. Mauris sit amet sagittis mi. Vivamus gravida maximus risus, eget bibendum orci tempor id. Etiam aliquet facilisis dignissim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque id convallis turpis, et semper odio. Vestibulum sodales bibendum sem, accumsan commodo tellus ornare tristique. Proin at justo enim.\n" +
-    "\n" +
-    "Sed pharetra quis tellus ut mollis. Ut eleifend enim diam, id egestas leo varius non. Mauris felis dolor, commodo eu commodo quis, congue vel purus. Quisque facilisis sed orci ac porta. Fusce a turpis hendrerit, aliquet elit non, vehicula nisl. Etiam quis interdum nulla. Quisque vulputate accumsan urna a laoreet. Mauris pulvinar velit a est vestibulum, vitae molestie nibh vestibulum. Nunc semper metus id porta tempor.\n" +
-    "\n" +
-    "Mauris non ante vel ex condimentum malesuada. Nulla fringilla sed augue ut hendrerit. Ut maximus imperdiet dui, sed viverra risus efficitur vel. Donec accumsan erat sit amet nisi tristique, eu tempor ante auctor. Proin rhoncus egestas risus, eu pulvinar odio efficitur eu. Etiam at varius urna. Cras at rhoncus purus, at consectetur urna. Ut scelerisque iaculis leo, vel ullamcorper urna fermentum eget.\n" +
-    "\n" +
-    "Vivamus in eleifend ipsum. Sed mattis varius diam, eget malesuada nulla porta sit amet. Aliquam erat volutpat. Duis sem dolor, imperdiet non condimentum quis, elementum ut ligula. Sed facilisis, nulla eget fringilla laoreet, lacus magna mattis nisl, ut laoreet est ipsum quis sem. Donec venenatis, magna ac pulvinar dictum, magna lorem mattis ex, vel posuere justo diam et lectus. Suspendisse mollis commodo dolor, ac fermentum velit. Fusce ullamcorper risus ac tempor congue. Sed porta auctor velit, nec scelerisque odio eleifend ac. Proin scelerisque efficitur convallis. Nulla sodales tellus in lacus efficitur sollicitudin. Cras porta leo dui, at feugiat nulla consectetur at.\n" +
-    "\n" +
-    "Duis sit amet felis sit amet elit ultrices lobortis sit amet sit amet odio. Vestibulum interdum placerat egestas. Morbi eget augue et ex venenatis dictum vel eu mauris. Vestibulum ut cursus nisl. Maecenas ullamcorper tellus dolor, vel gravida arcu tincidunt tristique. In eu felis molestie, faucibus ante nec, elementum dolor. Quisque pretium aliquet nibh efficitur tristique. Integer pellentesque, velit vitae sagittis luctus, lorem orci vehicula eros, quis accumsan nunc eros sit amet libero. Etiam quis diam mauris. Maecenas porta pulvinar ipsum ac varius. Pellentesque gravida ligula sit amet eros hendrerit, id convallis justo posuere. Nunc lacinia eleifend ex, in tempus purus posuere eu. Morbi vestibulum metus nibh, dignissim ullamcorper sem semper nec. Vestibulum viverra sodales nulla quis posuere. Donec et aliquet orci, at mollis quam.\n" +
-    "\n" +
-    "Donec vitae sapien sodales, placerat nibh a, sagittis dolor. In volutpat, enim ut auctor gravida, odio leo venenatis elit, eget mollis quam orci in dolor. Quisque mollis tempus odio sollicitudin tincidunt. Cras eleifend facilisis lorem pellentesque dictum. Sed auctor est sed enim aliquam imperdiet. Mauris tellus justo, sagittis nec ligula in, imperdiet interdum elit. Sed in nisl in massa commodo vehicula. Sed finibus velit ac nibh maximus euismod. Proin eu ipsum non nulla tristique finibus. Phasellus sollicitudin, elit sit amet fringilla convallis, dui purus laoreet leo, sit amet posuere nulla tortor vel arcu. Praesent vitae eros at nulla laoreet rutrum id a quam. Sed mollis feugiat felis sit amet pretium. Fusce suscipit, felis vel rutrum porttitor, odio diam lobortis tortor, vitae varius lacus lacus eget ante. Donec quis velit sed orci imperdiet pharetra ut vel est.\n" +
-    "\n" +
-    "Aenean at lectus sed ante consectetur accumsan non pharetra enim. Vivamus tincidunt interdum ullamcorper. Vivamus posuere lorem a nulla tincidunt, id vulputate lorem varius. Sed eget porta nisi, sit amet suscipit metus. Vestibulum auctor risus id sapien pellentesque, ac finibus arcu consequat. Cras congue magna nunc. Nunc mi enim, tincidunt vel mollis sit amet, rutrum vitae diam. Phasellus imperdiet, metus sit amet rutrum dignissim, nunc lectus posuere purus, et pellentesque tortor ante sodales quam. In hac habitasse platea dictumst. Sed mattis ultricies turpis, a dapibus erat aliquet sit amet. In nec hendrerit purus. Sed dapibus, ligula nec sodales molestie, mauris libero fermentum erat, vitae viverra enim mi vitae orci.\n" +
-    "\n" +
-    "Pellentesque scelerisque magna eget sollicitudin dapibus. Morbi sit amet nunc eu turpis sollicitudin consectetur. Vestibulum eget nunc sit amet tellus fringilla pulvinar. Nunc sit amet diam id risus aliquam tincidunt. Aenean tortor elit, vehicula non volutpat vitae, porttitor imperdiet dui. Nulla molestie est a sapien sollicitudin, sed molestie orci varius. Vestibulum blandit viverra urna. Maecenas at orci sed lacus sollicitudin tincidunt. Sed facilisis est nec neque cursus condimentum. Sed eu orci vel felis iaculis sodales non ut eros.\n" +
-    "\n" +
-    "Suspendisse eu blandit purus, in consectetur nisi. Nullam et dictum sem, sit amet fringilla purus. Curabitur consequat diam eu bibendum eleifend. Aenean vitae ex massa. Ut fringilla dignissim nisi, accumsan tristique dolor. Aenean eget nunc vitae dui suscipit condimentum. Phasellus ac augue tortor. Etiam sodales, sapien sit amet faucibus egestas, ex erat ultricies mi, a sodales elit est ac nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n" +
-    "\n" +
-    "Maecenas cursus ante sit amet tortor tempor ullamcorper. Pellentesque sagittis rutrum libero vitae fringilla. Etiam et scelerisque dui. Sed tincidunt, nibh sed malesuada pretium, neque lacus pharetra tortor, quis eleifend eros ipsum ultricies erat. Quisque vehicula dignissim elit vitae vehicula. Donec non mollis purus. Maecenas a nulla erat. Curabitur pellentesque erat sit amet nibh malesuada, eget vestibulum neque pulvinar. Proin luctus pharetra purus. Nam id justo eros. In sit amet est sollicitudin, eleifend nisi id, faucibus ipsum. Cras nulla nibh, placerat eu tortor vitae, lobortis sagittis odio. Proin consectetur hendrerit diam et ultricies. Morbi egestas, dui nec elementum auctor, quam dolor scelerisque nisi, quis bibendum ex enim sed risus. Etiam tortor risus, posuere in velit non, vehicula tincidunt lorem. Integer mollis at sapien non feugiat.\n" +
-    "\n" +
-    "Duis vel placerat ipsum, sit amet auctor erat. Aliquam erat volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vel scelerisque felis, sit amet auctor ligula. Vestibulum massa ex, sollicitudin vitae urna in, auctor ultricies tortor. Vivamus laoreet sit amet orci non accumsan. Maecenas aliquam libero at tempor venenatis. Vestibulum facilisis, dui sit amet convallis dignissim, diam neque vestibulum sapien, a tincidunt turpis arcu quis ipsum. In nec rhoncus risus, quis viverra nisi. Vestibulum vulputate leo nulla, nec blandit enim sodales eget. Maecenas fringilla finibus leo at euismod. Ut blandit egestas sagittis."
+export const text=
+    ["This is a demonstration of combining Tensorflow and React to create an intelligent interface where the scrolling action of a document" +
+    " is controlled by the blinking movement of the user's eyes. See github link for details",
+    "\n",
+    "blink to scroll down",
+
+    "=====================================================",
+    "text below is a publicly available excerpt of the Martian from Andy Weir's website",
+    "\n",
+    "Chapter 1" ,
+
+    "Six days into what should be the greatest two months of my life, and it’s turned into a nightmare." ,
+
+    "I don’t even know who’ll read this. I guess someone will find it eventually. Maybe a hundred years from now." ,
+
+    "For the record . . . I didn’t die on Sol 6. Certainly the rest of the crew thought I did, and I can’t blame them. Maybe there’ll be a day of national mourning for me, and my Wikipedia page will say, “Mark Watney is the only human being to have died on Mars.”" ,
+
+    "And it’ll be right, probably. ’Cause I’ll surely die here. Just not on Sol 6 when everyone thinks I did." ,
+
+    "Let’s see . . . where do I begin?" ,
+
+    "The Ares Program. Mankind reaching out to Mars to send people to another planet for the very first time and expand the horizons of humanity blah, blah, blah. The Ares 1 crew did their thing and came back heroes. They got the parades and fame and love of the world." ,
+
+    "Ares 2 did the same thing, in a different location on Mars. They got a firm handshake and a hot cup of coffee when they got home." ,
+
+    "Ares 3. Well, that was my mission. Okay, not mine per se. Commander Lewis was in charge. I was just one of her crew. Actually, I was the very lowest ranked member of the crew. I would only be “in command” of the mission if I were the only remaining person." ,
+
+    "What do you know? I’m in command." ,
+
+    "I wonder if this log will be recovered before the rest of the crew die of old age. I presume they got back to Earth all right. Guys, if you’re reading this: It wasn’t your fault. You did what you had to do. In your position I would have done the same thing. I don’t blame you, and I’m glad you survived." ,
+
+    "I guess I should explain how Mars missions work, for any layman who may be reading this. We got to Earth orbit the normal way, through an ordinary ship to Hermes. All the Ares missions use Hermes to get to and from Mars. It’s really big and cost a lot so NASA built only one." ,
+
+    "Once we got to Hermes, four additional unmanned missions brought us fuel and supplies while we prepared for our trip. Once everything was a go, we set out for Mars. But not very fast. Gone are the days of heavy chemical fuel burns and trans-Mars injection orbits." ,
+
+    "Hermes is powered by ion engines. They throw argon out the back of the ship really fast to get a tiny amount of acceleration. The thing is, it doesn’t take much reactant mass, so a little argon (and a nuclear reactor to power things) let us accelerate constantly the whole way there. You’d be amazed at how fast you can get going with a tiny acceleration over a long time." ,
+
+    "I could regale you with tales of how we had great fun on the trip, but I won’t. I don’t feel like reliving it right now. Suffice it to say we got to Mars 124 days later without strangling each other." ,
+
+    "From there, we took the MDV (Mars descent vehicle) to the surface. The MDV is basically a big can with some light thrusters and parachutes attached. Its sole purpose is to get six humans from Mars orbit to the surface without killing any of them." ,
+
+    "And now we come to the real trick of Mars exploration: having all of our shit there in advance." ,
+
+    "A total of fourteen unmanned missions deposited everything we would need for surface operations. They tried their best to land all the supply vessels in the same general area, and did a reasonably good job. Supplies aren’t nearly so fragile as humans and can hit the ground really hard. But they tend to bounce around a lot." ,
+
+    "Naturally, they didn’t send us to Mars until they’d confirmed that all the supplies had made it to the surface and their containers weren’t breached. Start to finish, including supply missions, a Mars mission takes about three years. In fact, there were Ares 3 supplies en route to Mars while the Ares 2 crew were on their way home." ,
+
+    "The most important piece of the advance supplies, of course, was the MAV. The Mars ascent vehicle. That was how we would get back to Hermes after surface operations were complete. The MAV was soft-landed (as opposed to the balloon bounce-fest the other supplies had). Of course, it was in constant communication with Houston, and if there had been any problems with it, we would have passed by Mars and gone home without ever landing." ,
+
+    "The MAV is pretty cool. Turns out, through a neat set of chemical reactions with the Martian atmosphere, for every kilogram of hydrogen you bring to Mars, you can make thirteen kilograms of fuel. It’s a slow process, though. It takes twenty-four months to fill the tank. That’s why they sent it long before we got here." ,
+
+    "You can imagine how disappointed I was when I discovered the MAV was gone." ,
+
+    "It was a ridiculous sequence of events that led to me almost dying, and an even more ridiculous sequence that led to me surviving." ,
+
+    "The mission is designed to handle sandstorm gusts up to 150 kph. So Houston got understandably nervous when we got whacked with 175 kph winds. We all got in our flight space suits and huddled in the middle of the Hab, just in case it lost pressure. But the Hab wasn’t the problem." ,
+
+    "The MAV is a spaceship. It has a lot of delicate parts. It can put up with storms to a certain extent, but it can’t just get sandblasted forever. After an hour and a half of sustained wind, NASA gave the order to abort. Nobody wanted to stop a monthlong mission after only six days, but if the MAV took any more punishment, we’d all have gotten stranded down there." ,
+
+    "We had to go out in the storm to get from the Hab to the MAV. That was going to be risky, but what choice did we have?" ,
+
+    "Everyone made it but me." ,
+
+    "Our main communications dish, which relayed signals from the Hab to Hermes, acted like a parachute, getting torn from its foundation and carried with the torrent. Along the way, it crashed through the reception antenna array. Then one of those long thin antennae slammed into me end-first. It tore through my suit like a bullet through butter, and I felt the worst pain of my life as it ripped open my side. I vaguely remember having the wind knocked out of me (pulled out of me, really) and my ears popping painfully as the pressure of my suit escaped." ,
+
+    "The last thing I remember was seeing Johanssen hopelessly reaching out toward me." ,
+
+    "I awoke to the oxygen alarm in my suit. A steady, obnoxious beeping that eventually roused me from a deep and profound desire to just fucking die." ,
+
+    "The storm had abated; I was facedown, almost totally buried in sand. As I groggily came to, I wondered why I wasn’t more dead." ,
+
+    "The antenna had enough force to punch through the suit and my side, but it had been stopped by my pelvis. So there was only one hole in the suit (and a hole in me, of course)." ,
+
+    "I had been knocked back quite a ways and rolled down a steep hill. Somehow I landed facedown, which forced the antenna to a strongly oblique angle that put a lot of torque on the hole in the suit. It made a weak seal." ,
+
+    "Then, the copious blood from my wound trickled down toward the hole. As the blood reached the site of the breach, the water in it quickly evaporated from the airflow and low pressure, leaving a gunky residue behind. More blood came in behind it and was also reduced to gunk. Eventually, it sealed the gaps around the hole and reduced the leak to something the suit could counteract." ,
+
+    "The suit did its job admirably. Sensing the drop in pressure, it constantly flooded itself with air from my nitrogen tank to equalize. Once the leak became manageable, it only had to trickle new air in slowly to relieve the air lost." ,
+
+    "After a while, the CO2 (carbon dioxide) absorbers in the suit were expended. That’s really the limiting factor to life support. Not the amount of oxygen you bring with you, but the amount of CO2 you can remove. In the Hab, I have the oxygenator, a large piece of equipment that breaks apart CO2 to give the oxygen back. But the space suits have to be portable, so they use a simple chemical absorption process with expendable filters. I’d been asleep long enough that my filters were useless." ,
+
+    "The suit saw this problem and moved into an emergency mode the engineers call “bloodletting.” Having no way to separate out the CO2, the suit deliberately vented air to the Martian atmosphere, then backfilled with nitrogen. Between the breach and the bloodletting, it quickly ran out of nitrogen. All it had left was my oxygen tank." ,
+
+    "So it did the only thing it could to keep me alive. It started backfilling with pure oxygen. I now risked dying from oxygen toxicity, as the excessively high amount of oxygen threatened to burn up my nervous system, lungs, and eyes. An ironic death for someone with a leaky space suit: too much oxygen." ,
+
+    "Every step of the way would have had beeping alarms, alerts, and warnings. But it was the high-oxygen warning that woke me." ,
+
+    "The sheer volume of training for a space mission is astounding. I’d spent a week back on Earth practicing emergency space suit drills. I knew what to do." ,
+
+    "Carefully reaching to the side of my helmet, I got the breach kit. It’s nothing more than a funnel with a valve at the small end and an unbelievably sticky resin on the wide end. The idea is you have the valve open and stick the wide end over a hole. The air can escape through the valve, so it doesn’t interfere with the resin making a good seal. Then you close the valve, and you’ve sealed the breach." ,
+
+    "The tricky part was getting the antenna out of the way. I pulled it out as fast as I could, wincing as the sudden pressure drop dizzied me and made the wound in my side scream in agony." ,
+
+    "I got the breach kit over the hole and sealed it. It held. The suit backfilled the missing air with yet more oxygen. Checking my arm readouts, I saw the suit was now at 85 percent oxygen. For reference, Earth’s atmosphere is about 21 percent. I’d be okay, so long as I didn’t spend too much time like that." ,
+
+    "I stumbled up the hill back toward the Hab. As I crested the rise, I saw something that made me very happy and something that made me very sad: The Hab was intact (yay!) and the MAV was gone (boo!)." ,
+
+    "Right that moment I knew I was screwed. But I didn’t want to just die out on the surface. I limped back to the Hab and fumbled my way into an airlock. As soon as it equalized, I threw off my helmet." ,
+
+    "Once inside the Hab, I doffed the suit and got my first good look at the injury. It would need stitches. Fortunately, all of us had been trained in basic medical procedures, and the Hab had excellent medical supplies. A quick shot of local anesthetic, irrigate the wound, nine stitches, and I was done. I’d be taking antibiotics for a couple of weeks, but other than that I’d be fine." ,
+
+    "I knew it was hopeless, but I tried firing up the communications array. No signal, of course. The primary satellite dish had broken off, remember? And it took the reception antennae with it. The Hab had secondary and tertiary communications systems, but they were both just for talking to the MAV, which would use its much more powerful systems to relay to Hermes. Thing is, that only works if the MAV is still around." ,
+
+    "I had no way to talk to Hermes. In time, I could locate the dish out on the surface, but it would take weeks for me to rig up any repairs, and that would be too late. In an abort, Hermes would leave orbit within twenty-four hours. The orbital dynamics made the trip safer and shorter the earlier you left, so why wait?" ,
+
+    "Checking out my suit, I saw the antenna had plowed through my bio-monitor computer. When on an EVA, all the crew’s suits are networked so we can see each other’s status. The rest of the crew would have seen the pressure in my suit drop to nearly zero, followed immediately by my bio-signs going flat. Add to that watching me tumble down a hill with a spear through me in the middle of a sandstorm . . . yeah. They thought I was dead. How could they not?" ,
+
+    "They may have even had a brief discussion about recovering my body, but regulations are clear. In the event a crewman dies on Mars, he stays on Mars. Leaving his body behind reduces weight for the MAV on the trip back. That means more disposable fuel and a larger margin of error for the return thrust. No point in giving that up for sentimentality." ,
+
+    "So that’s the situation. I’m stranded on Mars. I have no way to communicate with Hermes or Earth. Everyone thinks I’m dead. I’m in a Hab designed to last thirty-one days." ,
+
+    "If the oxygenator breaks down, I’ll suffocate. If the water reclaimer breaks down, I’ll die of thirst. If the Hab breaches, I’ll just kind of explode. If none of those things happen, I’ll eventually run out of food and starve to death." ,
+
+    "So yeah. I’m fucked." ,
+
+    "Chapter 2" ,
+
+    "LOG ENTRY: SOL 7" ,
+
+    "Okay, I’ve had a good night’s sleep, and things don’t seem as hopeless as they did yesterday." ,
+
+    "Today I took stock of supplies and did a quick EVA to check up on the external equipment. Here’s my situation:" ,
+
+    "The surface mission was supposed to be thirty-one days. For redundancy, the supply probes had enough food to last the whole crew fifty-six days. That way if one or two probes had problems, we’d still have enough food to complete the mission." ,
+
+    "We were six days in when all hell broke loose, so that leaves enough food to feed six people for fifty days. I’m just one guy, so it’ll last me three hundred days. And that’s if I don’t ration it. So I’ve got a fair bit of time." ,
+
+    "I’m pretty flush on EVA suits, too. Each crew member had two space suits: a flight spacesuit to wear during descent and ascent, and the much bulkier and more robust EVA suit to wear when doing surface operations. My flight spacesuit has a hole in it, and of course the crew was wearing the other five when they returned to Hermes. But all six EVA suits are still here and in perfect condition"
+]
