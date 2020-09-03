@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/eye-scroller/static/css/main.d13a6b4f.chunk.css",
+    "main.js": "/eye-scroller/static/js/main.e8cc5537.chunk.js",
+    "main.js.map": "/eye-scroller/static/js/main.e8cc5537.chunk.js.map",
+    "runtime-main.js": "/eye-scroller/static/js/runtime-main.11df09ae.js",
+    "runtime-main.js.map": "/eye-scroller/static/js/runtime-main.11df09ae.js.map",
+    "static/js/2.738a12f3.chunk.js": "/eye-scroller/static/js/2.738a12f3.chunk.js",
+    "static/js/2.738a12f3.chunk.js.map": "/eye-scroller/static/js/2.738a12f3.chunk.js.map",
+    "index.html": "/eye-scroller/index.html",
+    "precache-manifest.9671b5f977562f313a3acb64c362f14d.js": "/eye-scroller/precache-manifest.9671b5f977562f313a3acb64c362f14d.js",
+    "service-worker.js": "/eye-scroller/service-worker.js",
+    "static/css/main.d13a6b4f.chunk.css.map": "/eye-scroller/static/css/main.d13a6b4f.chunk.css.map",
+    "static/js/2.738a12f3.chunk.js.LICENSE.txt": "/eye-scroller/static/js/2.738a12f3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.11df09ae.js",
+    "static/js/2.738a12f3.chunk.js",
+    "static/css/main.d13a6b4f.chunk.css",
+    "static/js/main.e8cc5537.chunk.js"
+  ]
+}
