@@ -71,10 +71,10 @@ class App extends React.Component {
         this.what =priorSplits[2]
         this.hhat =priorSplits[3]
 
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/detectorModel.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-scroller/master/public/detectorModel.json").then(loadedModel=>{
                                 this.detectorModel=loadedModel;
                             });
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/blinker-fliper/master/public/landmarkModel3.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-scroller/master/public/landmarkModel3.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
                             });
 
