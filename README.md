@@ -5,7 +5,7 @@ model optimization, and deployment via Tenosrflow Python --> Tensorflow JS conve
 Result is an intelligent interface for controlling the scrolling action of a document by the user's blinking action. Inspired by the difficulty of
 simply turning a page and reading independently experienced by people suffering from whole-body paralysis.
 
-[Try the live demo yourself here at this link](https://jhanmtl.github.io/eye-detector/) (webcam access required)
+[Try the live demo yourself here at this link](https://jhanmtl.github.io/eye-scroller/) (webcam access required)
 * 60+  fps on GPU
 * 10-20 fps on CPU
 
@@ -25,8 +25,12 @@ Built on top of the first few layers (up to the 'conv2_block2_0_relu') of a Dens
 Upon training completion, model converted to TensorflowJS and integrated with React for realtime inference with client browser and webcam.
 
 
+
+
 SSD model schematic
 ![](public/detectorModelSchematic.png)
+
+
 
 MLP model schematic
 ![](./public/landmarkModelSchematic.png)
