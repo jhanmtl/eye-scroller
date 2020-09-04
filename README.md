@@ -25,13 +25,9 @@ Built on top of the first few layers (up to the 'conv2_block2_0_relu') of a Dens
 
 Upon training completion, model converted to TensorflowJS and integrated with React for realtime inference with client browser and webcam.
 
-
-
-
-* SSD model schematic
+SSD model schematic
 ![](public/detectorModelSchematic.png)
-
-* MLP model schematic
+MLP model schematic
 ![](./public/landmarkModelSchematic.png)
 
 
