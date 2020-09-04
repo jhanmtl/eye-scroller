@@ -474,7 +474,7 @@ class App extends React.Component {
                 <div className="overall">
                     <div className="controlPanel">
                         <Paper className="controlPaper" elevation={4}>
-                            <p className="title">blink detector: tensorflowjs + react</p>
+                            <p className="title">smart scroller: tensorflowjs + react</p>
 
                             <p className="note">eye detection</p>
 
