@@ -1,9 +1,10 @@
 This is a demonstration in using React with Tensorflow to perfrom realtime eye-detection and landmark-extraction via webcam and
-client-side inference. It is an end-to-end Machine Learning project that spans data collection, data augmentation, model design, customized training,
+client-side inference. Result is an intelligent interface for controlling the scrolling action of a document by the user's blinking action. Inspired by the difficulty of
+simply turning a page and reading independently experienced by people suffering from whole-body paralysis.
+
+It is an end-to-end Machine Learning project that spans data collection, data augmentation, model design, customized training,
 model optimization, and deployment via Tenosrflow Python --> Tensorflow JS convesion and React frontend integration. 
 
-Result is an intelligent interface for controlling the scrolling action of a document by the user's blinking action. Inspired by the difficulty of
-simply turning a page and reading independently experienced by people suffering from whole-body paralysis.
 
 [Try the live demo yourself here at this link](https://jhanmtl.github.io/eye-scroller/) (webcam access required)
 * 60+  fps on GPU
@@ -27,12 +28,10 @@ Upon training completion, model converted to TensorflowJS and integrated with Re
 
 
 
-SSD model schematic
+* SSD model schematic
 ![](public/detectorModelSchematic.png)
 
-
-
-MLP model schematic
+* MLP model schematic
 ![](./public/landmarkModelSchematic.png)
 
 
