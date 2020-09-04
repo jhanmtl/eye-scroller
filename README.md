@@ -1,12 +1,16 @@
-This project is a demonstration in using React with TensorFlowJS to perfrom realtime eye-detection via webcam and
-client-side inference.
+This project is a demonstration in using React with TensorFlowJS to perfrom realtime eye-detection and landmark-extraction via webcam and
+client-side inference. Result is an intelligent interface for controlling the scrolling action of a document by the user's blinking action. Inspired by the difficulty of
+simply turning a page and reading independently experienced by people suffering from whole-body paralysis. 
 
-[Try live demo here](https://jhanmtl.github.io/eye-detector/) (webcam access required)
+[Try the live demo yourself here at this link](https://jhanmtl.github.io/eye-detector/) (webcam access required)
+Example shown below
+
+![](./public/demo.gif)
 
 * 60+  fps on GPU
 * 5-10 fps on CPU
 
-![](./public/demo.gif)
+
 
 Customized SSD model originally implemented in TensorFlow Python. Specialized for eye detection. 
 
