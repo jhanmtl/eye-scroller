@@ -4,8 +4,11 @@ import './App.css';
 import {priors} from './priors'
 import Paper from '@material-ui/core/Paper';
 import {MyButton} from "./components/MyButton";
+import {SmallButton} from "./components/SmallButton";
 import Scrollbar from "react-scrollbars-custom";
 import {text} from "./text"
+
+import 'chartjs-plugin-streaming'
 
 class App extends React.Component {
 
@@ -46,6 +49,7 @@ class App extends React.Component {
         this.leftTextRef=React.createRef();
         this.rightTextRef=React.createRef();
         this.fpsTextRef=React.createRef();
+        this.scrollRef=React.createRef();
 
         this.videoHeight=undefined;
         this.videoWidth=undefined;
@@ -58,11 +62,20 @@ class App extends React.Component {
         this.eyeDim=112;
         this.landmarkCount=4;
 
-        this.threshold=0.6;
+        this.detectThreshold=0.6;
+        this.blinkThreshold=0.3;
         this.nmsSigma=0.025;
+
+        this.leftRatioHistory=[];
+        this.rightRatioHistory=[];
+
+        this.state={
+            scrollPos:50,
+        }
     }
 
     componentDidMount() {
+
         this.priorsTensor=tf.tensor2d(priors);
         const priorSplits=tf.split(this.priorsTensor,4,1);
 
@@ -82,6 +95,7 @@ class App extends React.Component {
         this.outputCtx=this.outputCanvasRef.current.getContext('2d');
         this.leftCtx=this.leftCanvasRef.current.getContext('2d');
         this.rightCtx=this.rightCanvasRef.current.getContext('2d');
+        // this.scrollRef.current.trackYElement.hidden=true;
 
         this.fillBlack();
         console.log(tf.getBackend())
@@ -162,7 +176,7 @@ class App extends React.Component {
         const h=box[2]-box[0]
 
         this.outputCtx.strokeStyle=style
-        this.outputCtx.lineWidth=2
+        this.outputCtx.lineWidth=1
         this.outputCtx.strokeRect(x,y,w,h)
     }
 
@@ -179,13 +193,10 @@ class App extends React.Component {
     }
 
     visualize(scoreA,scoreB,boxA,boxB){
-        this.drawBox(boxA, "rgb(0,255,0)")
-        this.drawBox(boxB, "rgb(0,255,0)")
+        this.drawBox(boxA, "rgb(0,255,255)")
+        this.drawBox(boxB, "rgb(0,255,255)")
         this.leftTextRef.current.innerText="left eye confidence: "+(100*scoreA).toFixed(2)+"%"
         this.rightTextRef.current.innerText="right eye confidence: "+(100*scoreB).toFixed(2)+"%"
-
-        // this.drawCenter(boxA,"rgb(0,255,255)");
-        // this.drawCenter(boxB,"rgb(0,255,255)");
     }
 
     updateOutputCanvas(){
@@ -335,7 +346,12 @@ class App extends React.Component {
         const bottomMarker=landmarks[3]
         const centerX=(topMarker[0]+bottomMarker[0])/2
         const centerY=(topMarker[1]+bottomMarker[1])/2
-        const radius=Math.abs((bottomMarker[1]-topMarker[1])/2)
+        const height=Math.abs(bottomMarker[1]-topMarker[1])
+        const radius=height/2
+
+        const leftMarker=landmarks[0]
+        const rightMarker=landmarks[2]
+        const width=Math.abs(leftMarker[0]-rightMarker[0])
 
         ctx.beginPath();
         ctx.arc(centerX,centerY,radius,0,2*Math.PI);
@@ -346,11 +362,36 @@ class App extends React.Component {
         ctx.arc(centerX,centerY,radius/2,0,2*Math.PI);
         ctx.fillStyle=style;
         ctx.fill();
+
+        return height/(width+1e-3);
+    }
+
+    logRatioHistory=(nowLeftRatio, nowRightRatio)=>{
+        if (this.leftRatioHistory.length<2){
+            this.leftRatioHistory.push(nowLeftRatio);
+        }
+        else{
+            this.leftRatioHistory[0]=this.leftRatioHistory[1];
+            this.leftRatioHistory[1]=nowLeftRatio;
+        }
+
+        if (this.rightRatioHistory.length<2){
+            this.rightRatioHistory.push(nowRightRatio);
+        }
+        else{
+            this.rightRatioHistory[0]=this.rightRatioHistory[1];
+            this.rightRatioHistory[1]=nowRightRatio;
+        }
+    }
+
+    percentDiff=(ratioHistory)=>{
+        let top=ratioHistory[0]-ratioHistory[1]
+        let bottom=(ratioHistory[0]+1e-5)
+        return top/bottom
     }
 
     synchroPredict=()=> {
         const t0 = performance.now()
-
         tf.tidy(() => {
                 this.cropToCanvas();
                 this.updateOutputCanvas();
@@ -359,7 +400,7 @@ class App extends React.Component {
                 const predictions = this.detectorModel.predict(detectorModelInput);
                 const [scoreLeft,scoreRight,boxLeft,boxRight]=this.getBoxesAndScores(predictions);
 
-                if (scoreLeft > this.threshold && scoreRight > this.threshold) {
+                if (scoreLeft > this.detectThreshold && scoreRight > this.detectThreshold) {
 
                     this.visualize(scoreLeft,scoreRight,boxLeft,boxRight);
 
@@ -367,12 +408,24 @@ class App extends React.Component {
                     this.boxCrop(boxRight,this.rightCtx);
 
                     let leftLandmarks=this.predictLandmarks(this.leftCanvasRef.current)
-                    this.drawLandmarks(leftLandmarks,this.leftCtx,'rgb(0,255,255)');
+                    let currentLeftRatio=this.drawLandmarks(leftLandmarks,this.leftCtx,'rgb(0,255,255)');
 
                     let rightLandmarks=this.predictLandmarks(this.rightCanvasRef.current)
-                    this.drawLandmarks(rightLandmarks,this.rightCtx,'rgb(0,255,255)');
+                    let currentRightRatio=this.drawLandmarks(rightLandmarks,this.rightCtx,'rgb(0,255,255)');
 
+                    this.logRatioHistory(currentLeftRatio,currentRightRatio);
+
+                    let leftChange=this.percentDiff(this.leftRatioHistory)
+                    let rightChange=this.percentDiff(this.rightRatioHistory)
+
+                    console.log("left: ",this.leftRatioHistory,leftChange);
+                    console.log("right: ",this.rightRatioHistory,rightChange);
+
+                    if (leftChange>this.blinkThreshold || rightChange>this.blinkThreshold){
+                        this.scrollDown();
+                    }
                 }
+
                 else{
                     this.fillBlack();
                 }
@@ -384,7 +437,56 @@ class App extends React.Component {
     }
 
 
+    scrollDown=()=>{
+        this.scrollRef.current.scrollTo(0, this.state.scrollPos);
+        let newPos=Math.min(this.state.scrollPos+50, 4100)
+        if (newPos<4100) {
+            this.setState({
+                scrollPos: newPos
+            })
+        }
+        else{
+             this.scrollRef.current.scrollToTop();
+             this.setState({
+                scrollPos: 50
+            })
+        }
+    }
+
+    scrollToTop=()=>{
+       this.scrollRef.current.scrollToTop();
+       this.setState({
+           scrollPos:50
+       })
+    }
+
+    formatText(){
+        let paragraphs=[]
+        for (let i=0;i<text.length;i++){
+            if (i<3){
+                paragraphs.push(
+                    <p key={i} className="headerNotes">{text[i]}</p>
+                )
+            }
+            else if (i===4){
+                paragraphs.push(
+                    <p key={i} className="smallNote">{text[i]}</p>
+                )
+            }
+            else{
+                 paragraphs.push(
+                    <p key={i} className="note">{text[i]}</p>
+                )
+            }
+
+        }
+        return paragraphs
+    }
+
+
+
     render(){
+
         return (
             <div className="App">
                 <div className="overall">
@@ -415,33 +517,39 @@ class App extends React.Component {
                                     <canvas className="rightEyeCanvas" width={this.eyeDim} height={this.eyeDim} ref={this.rightCanvasRef}/>
                                 </div>
 
-
-
                                 <MyButton onClick={this.startWebcam}>start model</MyButton>
+
                                 <p className="note" ref={this.leftTextRef}>left eye confidence:</p>
                                 <p className="note" ref={this.rightTextRef}>right eye confidence:</p>
                                 <p className="note" ref={this.fpsTextRef}>fps:</p>
 
-                                <a href="https://github.com/jhanmtl/eye-detector" className="repoLink">github repo</a>
+                                <a href="https://github.com/jhanmtl/eye-detector" className="note">github repo</a>
+
                             </div>
 
                         </Paper>
                     </div>
-
                     <div className="textWindow">
                         <Paper className="textPaper" elevation={4}>
                             <div className="textContent">
-                                <Scrollbar>
-                                    <p>{text}</p>
+                                <Scrollbar ref={this.scrollRef} minimalThumbSize={10} maximalThumbSize={12}>
+                                    <div className="textBox">
+                                        {this.formatText()}
+                                    </div>
                                 </Scrollbar>
                             </div>
+
+                            <SmallButton onClick={this.scrollToTop} style={{}}>back to top</SmallButton>
+
                         </Paper>
 
-
                     </div>
-
                 </div>
+                <button onClick={this.scrollToTop} style={{marginLeft:950}}>back to top</button>
+
             </div>
+
+
         );
     }
 

@@ -12,13 +12,13 @@ body{
   box-sizing: border-box;
 
   width: 790px;
-  height: 865px;
+  height: 640px;
 
   position: absolute;
   top: 50%;
   left: 50%;
 
-  margin: -432px 0 0 -395px;
+  margin: -340px 0 0 -395px;
 
   /*border: 1px solid red;*/
 
@@ -170,5 +170,5 @@ body{
 
 
 .smallNote{
-  font-size: 11px;
+  font-size: 10px;
 }
