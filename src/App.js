@@ -87,7 +87,7 @@ class App extends React.Component {
         tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-scroller/master/public/detectorModel.json").then(loadedModel=>{
                                 this.detectorModel=loadedModel;
                             });
-        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-scroller/master/public/landmarkModel3.json").then(loadedModel=>{
+        tf.loadLayersModel("https://raw.githubusercontent.com/jhanmtl/eye-scroller/master/public/landmarkModel.json").then(loadedModel=>{
             this.landmarksModel=loadedModel;
                             });
 
@@ -95,7 +95,6 @@ class App extends React.Component {
         this.outputCtx=this.outputCanvasRef.current.getContext('2d');
         this.leftCtx=this.leftCanvasRef.current.getContext('2d');
         this.rightCtx=this.rightCanvasRef.current.getContext('2d');
-        // this.scrollRef.current.trackYElement.hidden=true;
 
         this.fillBlack();
         console.log(tf.getBackend())
@@ -178,18 +177,6 @@ class App extends React.Component {
         this.outputCtx.strokeStyle=style
         this.outputCtx.lineWidth=1
         this.outputCtx.strokeRect(x,y,w,h)
-    }
-
-    drawCenter(box,style){
-        const cenY=(box[0]+box[2])/2;
-        const cenX=(box[1]+box[3])/2;
-
-        this.outputCtx.beginPath();
-        this.outputCtx.arc(cenX,cenY,5,0,2*Math.PI,false);
-
-        this.outputCtx.lineWidth=2;
-        this.outputCtx.strokeStyle=style;
-        this.outputCtx.stroke();
     }
 
     visualize(scoreA,scoreB,boxA,boxB){
@@ -418,9 +405,6 @@ class App extends React.Component {
                     let leftChange=this.percentDiff(this.leftRatioHistory)
                     let rightChange=this.percentDiff(this.rightRatioHistory)
 
-                    console.log("left: ",this.leftRatioHistory,leftChange);
-                    console.log("right: ",this.rightRatioHistory,rightChange);
-
                     if (leftChange>this.blinkThreshold || rightChange>this.blinkThreshold){
                         this.scrollDown();
                     }
@@ -483,8 +467,6 @@ class App extends React.Component {
         return paragraphs
     }
 
-
-
     render(){
 
         return (
@@ -545,7 +527,6 @@ class App extends React.Component {
 
                     </div>
                 </div>
-                <button onClick={this.scrollToTop} style={{marginLeft:950}}>back to top</button>
 
             </div>
 
