@@ -8,7 +8,7 @@ Result is an intelligent interface for controlling the scrolling action of a doc
 simply turning a page and reading independently experienced by people suffering from whole-body paralysis.
 
 [Try the live demo yourself here at this link](https://jhanmtl.github.io/eye-scroller/) (webcam access required)
-* 60+  fps on GPU
+* 50+  fps on GPU
 * 10-20 fps on CPU
 
 Example shown below. Models details follow.
