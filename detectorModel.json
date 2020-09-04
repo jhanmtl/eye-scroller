@@ -185,7 +185,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "Conv1_relu",
                   "inbound_nodes": [
@@ -305,7 +305,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "expanded_conv_depthwise_relu",
                   "inbound_nodes": [
@@ -523,7 +523,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_1_expand_relu",
                   "inbound_nodes": [
@@ -673,7 +673,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_1_depthwise_relu",
                   "inbound_nodes": [
@@ -891,7 +891,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_2_expand_relu",
                   "inbound_nodes": [
@@ -1011,7 +1011,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_2_depthwise_relu",
                   "inbound_nodes": [
@@ -1254,7 +1254,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_3_expand_relu",
                   "inbound_nodes": [
@@ -1404,7 +1404,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_3_depthwise_relu",
                   "inbound_nodes": [
@@ -1622,7 +1622,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_4_expand_relu",
                   "inbound_nodes": [
@@ -1742,7 +1742,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_4_depthwise_relu",
                   "inbound_nodes": [
@@ -1985,7 +1985,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_5_expand_relu",
                   "inbound_nodes": [
@@ -2105,7 +2105,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_5_depthwise_relu",
                   "inbound_nodes": [
@@ -2348,7 +2348,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_6_expand_relu",
                   "inbound_nodes": [
@@ -2498,7 +2498,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_6_depthwise_relu",
                   "inbound_nodes": [
@@ -2716,7 +2716,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_7_expand_relu",
                   "inbound_nodes": [
@@ -2836,7 +2836,7 @@
                     "dtype": "float32",
                     "max_value": 6.0,
                     "negative_slope": 0.0,
-                    "threshold": 0.0
+                    "detectThreshold": 0.0
                   },
                   "name": "block_7_depthwise_relu",
                   "inbound_nodes": [
