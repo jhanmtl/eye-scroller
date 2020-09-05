@@ -12,7 +12,7 @@ simply turning a page and reading independently experienced by people suffering 
 * 10-20 fps on CPU
 
 Example shown below. Models details follow.
-![](./public/demo.gif)
+![](./public/dwightDemo.gif)
 
 Two models trained and deployed. Both utilize Functional architecture from TensorFlow Python. Training data obtained from the 
 Landmark guided face Parsing ([LaPa](https://github.com/JDAI-CV/lapa-dataset)) dataset by JDAI-CV and preprocessed with on-line augmentation via tf.data API.

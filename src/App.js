@@ -62,8 +62,8 @@ class App extends React.Component {
         this.eyeDim=112;
         this.landmarkCount=4;
 
-        this.detectThreshold=0.6;
-        this.blinkThreshold=0.3;
+        this.detectThreshold=0.8;
+        this.blinkThreshold=0.6;
         this.nmsSigma=0.025;
 
         this.leftRatioHistory=[];
