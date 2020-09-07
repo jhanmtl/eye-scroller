@@ -73,6 +73,10 @@ body{
   -moz-transform:rotateY(180deg); /* Firefox */
 }
 
+.outputCanvas{
+  /*border: 1px solid red;*/
+}
+
 .output{
   height:224px;
 }
@@ -112,6 +116,12 @@ body{
 .note{
   font-size: 10pt;
   margin-bottom: 10px;
+}
+
+.loadingText{
+  font-size: 12pt;
+  margin-top: 81pt;
+  color: #b1b1b1;
 }
 
 .leftEyeCanvas, .rightEyeCanvas{

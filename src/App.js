@@ -9,6 +9,7 @@ import Scrollbar from "react-scrollbars-custom";
 import {text} from "./text"
 
 import 'chartjs-plugin-streaming'
+import {MyProgress} from "./components/MyProgress";
 
 class App extends React.Component {
 
@@ -71,6 +72,7 @@ class App extends React.Component {
 
         this.state={
             scrollPos:50,
+            inProgress:false,
         }
     }
 
@@ -113,6 +115,11 @@ class App extends React.Component {
     }
 
     startWebcam=()=>{
+        this.setState(
+            {
+                inProgress:true
+            }
+        )
         if (navigator.mediaDevices.getUserMedia){
             navigator.mediaDevices.getUserMedia({
                 video:true,
@@ -122,7 +129,6 @@ class App extends React.Component {
                 this.videoRef.current.style.display='none'
                 this.inputCanvasRef.current.style.display='none'
                 this.setCropProps(stream)
-
                 this.synchroPredict();
             })
         }
@@ -487,9 +493,12 @@ class App extends React.Component {
                                     <canvas id='inputCanvasId' className="inputCanvas" width={224} height={224} ref={this.inputCanvasRef}/>
                                 </div>
 
-
                                 <div className="output">
                                         <canvas className="outputCanvas" width={224} height={224} ref={this.outputCanvasRef}/>
+                                </div>
+
+                                <div className="output">
+                                    {(this.state.inProgress)?<p className="loadingText">initiating model . . .</p>:""}
                                 </div>
 
                                     <p className="note">eye extraction</p>
@@ -527,6 +536,7 @@ class App extends React.Component {
 
                     </div>
                 </div>
+
 
             </div>
 
