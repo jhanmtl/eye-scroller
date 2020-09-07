@@ -9,7 +9,6 @@ import Scrollbar from "react-scrollbars-custom";
 import {text} from "./text"
 
 import 'chartjs-plugin-streaming'
-import {MyProgress} from "./components/MyProgress";
 
 class App extends React.Component {
 
@@ -453,12 +452,12 @@ class App extends React.Component {
     formatText(){
         let paragraphs=[]
         for (let i=0;i<text.length;i++){
-            if (i<3){
+            if (i<5){
                 paragraphs.push(
                     <p key={i} className="headerNotes">{text[i]}</p>
                 )
             }
-            else if (i===4){
+            else if (i===6){
                 paragraphs.push(
                     <p key={i} className="smallNote">{text[i]}</p>
                 )

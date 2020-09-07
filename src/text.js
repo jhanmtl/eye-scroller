@@ -1,8 +1,9 @@
 export const text=
-    ["This is a demonstration of combining Tensorflow and React to create an intelligent interface where the scrolling action of a document" +
-    " is controlled by the blinking movement of the user's eyes. See github link for details",
-    "\n",
-    "blink to scroll down",
+    ["This is a demonstration of combining Tensorflow and React to create an intelligent interface where the scrolling action of a document is controlled by the blinking movement of the user's eyes. ",
+        "\n",
+    "Inspired by the difficulty of simply turning a page and reading independently experienced by people suffering from whole-body paralysis.",
+        "\n",
+    "blink to scroll down when model loaded",
 
     "=====================================================",
     "text below is a publicly available excerpt of the Martian from Andy Weir's website",
