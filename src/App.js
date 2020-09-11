@@ -513,7 +513,7 @@ class App extends React.Component {
                                 <p className="note" ref={this.rightTextRef}>right eye confidence:</p>
                                 <p className="note" ref={this.fpsTextRef}>fps:</p>
 
-                                <a href="https://github.com/jhanmtl/eye-detector" className="note">github repo</a>
+                                <a href="https://github.com/jhanmtl/eye-scroller" className="note">github repo</a>
 
                             </div>
 
